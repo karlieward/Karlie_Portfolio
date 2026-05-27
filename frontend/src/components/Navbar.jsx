@@ -20,23 +20,16 @@ export default function Navbar() {
   return (
     <nav style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
-      padding: '0 24px',
-      height: 68,
+      padding: '24px 24px',
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       transition: 'all 0.3s ease',
-      background: scrolled ? 'rgba(250,250,248,0.92)' : 'transparent',
+      background: scrolled ? 'rgba(255, 255, 255, 0.7)' : 'transparent',
       backdropFilter: scrolled ? 'blur(12px)' : 'none',
-      borderBottom: scrolled ? '1px solid rgba(0,0,0,0.06)' : 'none',
+      borderBottom: scrolled ? '1px solid #e5e7eb' : 'none',
     }}>
       {/* Logo */}
-      <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <div style={{
-          width: 36, height: 36, borderRadius: '50%',
-          background: 'linear-gradient(135deg, #FF6B6B, #6C63FF)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          color: '#fff', fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '1rem'
-        }}>K</div>
-        <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '1.1rem', color: 'var(--dark)' }}>
+      <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: 0, textDecoration: 'none' }}>
+        <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '1.1rem', color: '#000000' }}>
           karlie
         </span>
       </a>
@@ -50,20 +43,18 @@ export default function Navbar() {
             href={link.href}
             style={{
               padding: '8px 16px',
-              borderRadius: 100,
+              borderRadius: 6,
               fontFamily: 'Plus Jakarta Sans',
-              fontWeight: 600,
-              fontSize: '0.9rem',
-              color: 'var(--dark)',
-              transition: 'all 0.2s',
+              fontWeight: 500,
+              fontSize: '0.95rem',
+              color: '#6b7280',
+              transition: 'all 0.3s',
             }}
             onMouseEnter={e => {
-              e.target.style.background = 'var(--light)'
-              e.target.style.color = 'var(--coral)'
+              e.target.style.color = '#000000'
             }}
             onMouseLeave={e => {
-              e.target.style.background = 'transparent'
-              e.target.style.color = 'var(--dark)'
+              e.target.style.color = '#6b7280'
             }}
           >
             {link.label}
@@ -72,9 +63,9 @@ export default function Navbar() {
         <a
           href="#contact"
           className="btn btn-primary"
-          style={{ padding: '10px 22px', fontSize: '0.88rem' }}
+          style={{ padding: '10px 22px', fontSize: '0.88rem', marginLeft: 8 }}
         >
-          Hire Me ✨
+          Hire Me
         </a>
       </div>
 

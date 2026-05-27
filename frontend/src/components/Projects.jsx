@@ -11,29 +11,19 @@ export default function Projects({ data }) {
   const [hovered, setHovered] = useState(null)
 
   return (
-    <section id="projects" className="section">
+    <section id="projects" className="section" style={{ borderTop: '1px solid #e5e7eb' }}>
       <div className="container">
-        <div style={{ marginBottom: 60, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 24 }}>
-          <div>
-            <div className="section-label">My Work</div>
-            <h2 className="section-title">Projects I'm proud of.</h2>
-            <p className="section-subtitle">
-              A mix of technical builds and creative work — each one a chance to solve something real.
-            </p>
-          </div>
-          <a href="https://github.com" target="_blank" rel="noreferrer"
-             className="btn btn-outline" style={{ flexShrink: 0 }}>
-            View GitHub →
-          </a>
+        <div style={{ marginBottom: 60 }}>
+          <div className="section-label">My Work</div>
+          <h2 className="section-title">Featured Projects</h2>
         </div>
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          gap: 24,
+          gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+          gap: 32,
         }}>
           {data.map(project => {
-            const tc = tagColors[project.tagColor] || tagColors.coral
             const isHovered = hovered === project.id
             return (
               <div
@@ -43,71 +33,54 @@ export default function Projects({ data }) {
                 style={{
                   background: '#fff',
                   borderRadius: 'var(--radius-lg)',
-                  padding: 32,
-                  border: '1px solid rgba(0,0,0,0.06)',
+                  border: '1px solid #e5e7eb',
+                  overflow: 'hidden',
                   transition: 'all 0.3s ease',
-                  transform: isHovered ? 'translateY(-8px)' : 'translateY(0)',
-                  boxShadow: isHovered ? 'var(--shadow-lg)' : 'var(--shadow-sm)',
+                  transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
+                  boxShadow: isHovered ? 'var(--shadow-md)' : 'var(--shadow-sm)',
                   cursor: 'pointer',
-                  display: 'flex', flexDirection: 'column', gap: 20,
-                  position: 'relative', overflow: 'hidden',
+                  display: 'flex', flexDirection: 'column',
+                  borderColor: isHovered ? 'var(--dark)' : '#e5e7eb',
                 }}
               >
-                {/* Colored accent top bar */}
+                {/* Image area */}
                 <div style={{
-                  position: 'absolute', top: 0, left: 0, right: 0, height: 4,
-                  background: tc.color,
-                  opacity: isHovered ? 1 : 0,
-                  transition: 'opacity 0.3s',
-                }} />
-
-                {/* Emoji icon */}
-                <div style={{
-                  width: 56, height: 56, borderRadius: 'var(--radius-md)',
-                  background: project.color,
+                  height: 200,
+                  background: '#f3f4f6',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '1.8rem',
-                  transition: 'transform 0.3s',
-                  transform: isHovered ? 'scale(1.1) rotate(-5deg)' : 'scale(1)',
+                  fontSize: '3rem',
+                  borderBottom: '1px solid #e5e7eb',
                 }}>
                   {project.emoji}
                 </div>
 
-                <div>
+                {/* Content */}
+                <div style={{
+                  padding: 24,
+                  display: 'flex', flexDirection: 'column', flex: 1,
+                }}>
                   <h3 style={{
-                    fontFamily: 'Plus Jakarta Sans', fontWeight: 800,
-                    fontSize: '1.15rem', marginBottom: 10, color: 'var(--dark)'
+                    fontFamily: 'Plus Jakarta Sans', fontWeight: 700,
+                    fontSize: '1.15rem', marginBottom: 12, color: 'var(--dark)'
                   }}>
                     {project.title}
                   </h3>
-                  <p style={{ color: 'var(--gray)', fontSize: '0.92rem', lineHeight: 1.65 }}>
+                  <p style={{ color: '#6b7280', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: 16, flex: 1 }}>
                     {project.description}
                   </p>
-                </div>
 
-                {/* Tags */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 'auto' }}>
-                  {project.tags.map(tag => (
-                    <span key={tag} style={{
-                      padding: '4px 12px', borderRadius: 100,
-                      background: tc.bg, color: tc.color,
-                      fontSize: '0.78rem', fontWeight: 700,
-                      fontFamily: 'Plus Jakarta Sans',
-                    }}>{tag}</span>
-                  ))}
+                  {/* Tags */}
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                    {project.tags.map(tag => (
+                      <span key={tag} style={{
+                        padding: '4px 10px', borderRadius: 4,
+                        background: '#f3f4f6', color: 'var(--dark)',
+                        fontSize: '0.75rem', fontWeight: 600,
+                        fontFamily: 'Plus Jakarta Sans',
+                      }}>{tag}</span>
+                    ))}
+                  </div>
                 </div>
-
-                {/* Hover arrow */}
-                <div style={{
-                  position: 'absolute', bottom: 24, right: 24,
-                  width: 36, height: 36, borderRadius: '50%',
-                  background: tc.bg, color: tc.color,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '1rem', fontWeight: 700,
-                  opacity: isHovered ? 1 : 0,
-                  transform: isHovered ? 'scale(1)' : 'scale(0.8)',
-                  transition: 'all 0.25s',
-                }}>→</div>
               </div>
             )
           })}

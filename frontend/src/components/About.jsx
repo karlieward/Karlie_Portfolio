@@ -1,21 +1,6 @@
 export default function About({ data }) {
   return (
-    <section id="about" className="section" style={{ background: 'var(--dark)', color: '#fff', position: 'relative', overflow: 'hidden' }}>
-      {/* Decorative shape */}
-      <div style={{
-        position: 'absolute', top: -60, right: -60,
-        width: 300, height: 300,
-        borderRadius: '50%',
-        background: 'rgba(108,99,255,0.08)',
-        zIndex: 0,
-      }} />
-      <div style={{
-        position: 'absolute', bottom: -80, left: -40,
-        width: 240, height: 240,
-        borderRadius: '50%',
-        background: 'rgba(255,107,107,0.06)',
-        zIndex: 0,
-      }} />
+    <section id="about" className="section" style={{ background: 'var(--offwhite)', color: 'var(--dark)', position: 'relative', overflow: 'hidden', borderTop: '1px solid #e5e7eb' }}>
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{
@@ -25,15 +10,11 @@ export default function About({ data }) {
         }}>
           {/* Left: Text */}
           <div>
-            <div className="section-label" style={{ color: '#FF6B6B' }}>About Me</div>
-            <h2 className="section-title" style={{ color: '#fff', marginBottom: 24 }}>
-              Where tech meets<br />
-              <span style={{
-                background: 'linear-gradient(90deg, #FF6B6B, #6C63FF)',
-                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'
-              }}>creativity.</span>
+            <div className="section-label">About</div>
+            <h2 className="section-title" style={{ marginBottom: 24 }}>
+              Where design meets development
             </h2>
-            <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, fontSize: '1.05rem', marginBottom: 36 }}>
+            <p style={{ color: '#6b7280', lineHeight: 1.8, fontSize: '1.05rem', marginBottom: 36 }}>
               {data.bio}
             </p>
 
@@ -41,15 +22,18 @@ export default function About({ data }) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {data.highlights.map((item, i) => (
                 <div key={i} style={{
-                  display: 'flex', alignItems: 'center', gap: 14,
+                  display: 'flex', alignItems: 'flex-start', gap: 14,
                 }}>
                   <div style={{
-                    width: 28, height: 28, borderRadius: '50%', flexShrink: 0,
-                    background: ['#FF6B6B','#6C63FF','#FFD166','#06D6A0'][i % 4],
+                    width: 24, height: 24, borderRadius: '50%', flexShrink: 0,
+                    background: '#e5e7eb',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: '0.75rem',
+                    fontSize: '0.7rem',
+                    fontWeight: 800,
+                    color: '#1a1a1a',
+                    marginTop: 2,
                   }}>✓</div>
-                  <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.95rem', fontWeight: 500 }}>
+                  <span style={{ color: 'var(--dark)', fontSize: '0.95rem', fontWeight: 500 }}>
                     {item}
                   </span>
                 </div>
@@ -57,27 +41,27 @@ export default function About({ data }) {
             </div>
           </div>
 
-          {/* Right: Fun card */}
+          {/* Right: Visual card */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            {/* Big avatar placeholder */}
+            {/* Avatar card */}
             <div style={{
               borderRadius: 'var(--radius-lg)',
-              background: 'linear-gradient(135deg, rgba(255,107,107,0.25), rgba(108,99,255,0.25))',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'var(--white)',
+              border: '1px solid #e5e7eb',
               padding: 40,
               display: 'flex', flexDirection: 'column', alignItems: 'center',
               gap: 16, textAlign: 'center'
             }}>
               <div style={{
-                width: 100, height: 100, borderRadius: '50%',
-                background: 'linear-gradient(135deg, #FF6B6B, #6C63FF)',
+                width: 120, height: 120, borderRadius: '50%',
+                background: '#e5e7eb',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '2.5rem', fontWeight: 800, color: '#fff',
+                fontSize: '2.5rem', fontWeight: 800, color: 'var(--dark)',
                 fontFamily: 'Plus Jakarta Sans',
               }}>K</div>
               <div>
-                <div style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '1.4rem', color: '#fff' }}>Karlie</div>
-                <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', marginTop: 4 }}>
+                <div style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 700, fontSize: '1.3rem', color: 'var(--dark)' }}>Karlie</div>
+                <div style={{ color: '#6b7280', fontSize: '0.9rem', marginTop: 4 }}>
                   Information Systems Graduate
                 </div>
               </div>
@@ -86,36 +70,13 @@ export default function About({ data }) {
               }}>
                 {['React', '.NET', 'Figma', 'SQL'].map(t => (
                   <span key={t} style={{
-                    padding: '4px 12px', borderRadius: 100,
-                    background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
-                    fontSize: '0.8rem', color: 'rgba(255,255,255,0.7)',
+                    padding: '6px 14px', borderRadius: 4,
+                    background: '#e5e7eb', border: 'none',
+                    fontSize: '0.8rem', color: 'var(--dark)',
                     fontFamily: 'Plus Jakarta Sans', fontWeight: 600,
                   }}>{t}</span>
                 ))}
               </div>
-            </div>
-
-            {/* Fun fact cards */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-              {[
-                { emoji: '🎨', label: 'Design-first thinker' },
-                { emoji: '💻', label: 'Full-stack builder' },
-                { emoji: '📐', label: 'Systems designer' },
-                { emoji: '✨', label: 'Detail-obsessed' },
-              ].map(item => (
-                <div key={item.label} style={{
-                  background: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  borderRadius: 'var(--radius-md)',
-                  padding: '18px 16px',
-                  display: 'flex', flexDirection: 'column', gap: 8
-                }}>
-                  <span style={{ fontSize: '1.5rem' }}>{item.emoji}</span>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'rgba(255,255,255,0.8)', fontFamily: 'Plus Jakarta Sans' }}>
-                    {item.label}
-                  </span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
