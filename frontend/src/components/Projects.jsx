@@ -30,6 +30,7 @@ export default function Projects({ data }) {
                 key={project.id}
                 onMouseEnter={() => setHovered(project.id)}
                 onMouseLeave={() => setHovered(null)}
+                onClick={() => project.link && window.open(project.link, '_blank')}
                 style={{
                   background: '#fff',
                   borderRadius: 'var(--radius-lg)',
@@ -38,7 +39,7 @@ export default function Projects({ data }) {
                   transition: 'all 0.3s ease',
                   transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
                   boxShadow: isHovered ? 'var(--shadow-md)' : 'var(--shadow-sm)',
-                  cursor: 'pointer',
+                  cursor: project.link ? 'pointer' : 'default',
                   display: 'flex', flexDirection: 'column',
                   borderColor: isHovered ? 'var(--dark)' : '#e5e7eb',
                 }}
@@ -80,6 +81,29 @@ export default function Projects({ data }) {
                       }}>{tag}</span>
                     ))}
                   </div>
+
+                  {/* Link indicator */}
+                  {project.link && (
+                    <div style={{
+                      marginTop: 16,
+                      paddingTop: 12,
+                      borderTop: '1px solid #e5e7eb',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 6,
+                      color: '#6b7280',
+                      fontSize: '0.85rem',
+                      transition: 'all 0.3s ease',
+                      opacity: isHovered ? 1 : 0.7,
+                    }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      View on GitHub
+                    </div>
+                  )}
                 </div>
               </div>
             )

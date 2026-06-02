@@ -114,6 +114,14 @@ function getFallbackData() {
         tagColor: "yellow",
         emoji: "🛒",
         color: "#FFF8E0"
+      },
+      {
+        id: 5,
+        title: "Dairy Farm Inventory System",
+        description: "Full-stack web application for managing farm medication inventory with user authentication, image uploads, and role-based access control. Features real-time inventory tracking, medication details with images, and comprehensive audit logging.",
+        tags: ["Node.js", "Express", "PostgreSQL", "Knex", "Multer", "EJS"],
+        emoji: "🐄",
+        link: "https://github.com/karlieward/Karlie_Portfolio"
       }
     ],
     skills: {
