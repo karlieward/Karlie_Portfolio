@@ -1,3 +1,17 @@
+import dairy1 from '../assets/images/dairy-1.jpg'
+import dairy2 from '../assets/images/dairy-2.jpg'
+import dairy3 from '../assets/images/dairy-3.jpg'
+import dairy4 from '../assets/images/dairy-4.jpg'
+import dairy5 from '../assets/images/dairy-5.jpg'
+
+const imageMap = {
+  'dairy-1.jpg': dairy1,
+  'dairy-2.jpg': dairy2,
+  'dairy-3.jpg': dairy3,
+  'dairy-4.jpg': dairy4,
+  'dairy-5.jpg': dairy5,
+}
+
 export default function ProjectDetail({ project, onClose }) {
   if (!project) return null;
 
@@ -97,32 +111,28 @@ export default function ProjectDetail({ project, onClose }) {
                 gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
                 gap: 16,
               }}>
-                {project.images.map((image, idx) => (
-                  <div
-                    key={idx}
-                    style={{
-                      borderRadius: 'var(--radius-lg)',
-                      overflow: 'hidden',
-                      border: '1px solid #e5e7eb',
-                      background: '#f3f4f6',
-                      aspectRatio: '16/9',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#9ca3af',
-                    }}
-                  >
-                    {image.src.startsWith('http') ? (
-                      <img src={image.src} alt={image.alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                    ) : (
-                      <div style={{ textAlign: 'center', padding: 24 }}>
-                        <div style={{ fontSize: '3rem', marginBottom: 8 }}>📸</div>
-                        <p>{image.alt}</p>
-                        <p style={{ fontSize: '0.85rem', marginTop: 8 }}>(Screenshot to be added)</p>
-                      </div>
-                    )}
-                  </div>
-                ))}
+                {project.images.map((image, idx) => {
+                  const filename = image.src.split('/').pop()
+                  const imageSrc = imageMap[filename] || image.src
+                  return (
+                    <div
+                      key={idx}
+                      style={{
+                        borderRadius: 'var(--radius-lg)',
+                        overflow: 'hidden',
+                        border: '1px solid #e5e7eb',
+                        background: '#f3f4f6',
+                        aspectRatio: '16/9',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#9ca3af',
+                      }}
+                    >
+                      <img src={imageSrc} alt={image.alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </div>
+                  )
+                })}
               </div>
             </div>
           )}
