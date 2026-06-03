@@ -3,7 +3,6 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Projects from './components/Projects'
-import ProjectDetail from './components/ProjectDetail'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -11,7 +10,6 @@ import Footer from './components/Footer'
 function App() {
   const [portfolioData, setPortfolioData] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [selectedProject, setSelectedProject] = useState(null)
 
   useEffect(() => {
     // Fetch data from .NET API
@@ -53,18 +51,9 @@ function App() {
       <main>
         <Hero data={portfolioData.hero} />
         <About data={portfolioData.about} />
-        {selectedProject ? (
-          <ProjectDetail project={selectedProject} onClose={() => setSelectedProject(null)} />
-        ) : (
-          <>
-            <Projects
-              data={portfolioData.projects}
-              onProjectClick={setSelectedProject}
-            />
-            <Skills data={portfolioData.skills} />
-            <Contact />
-          </>
-        )}
+        <Projects data={portfolioData.projects} />
+        <Skills data={portfolioData.skills} />
+        <Contact />
       </main>
       <Footer />
     </>
@@ -92,19 +81,47 @@ function getFallbackData() {
     projects: [
       {
         id: 1,
+        title: "Brand Identity System",
+        description: "Designed a complete visual identity for a local small business — logo, color palette, typography, and component library in Figma.",
+        tags: ["Figma", "Branding", "Design"],
+        tagColor: "coral",
+        emoji: "🎨",
+        color: "#FFE8E8"
+      },
+      {
+        id: 2,
+        title: "Full-Stack Dashboard",
+        description: "Built a real-time analytics dashboard with React + .NET API backend, featuring live charts, filtering, and user authentication.",
+        tags: ["React", ".NET", "SQL", "Charts"],
+        tagColor: "purple",
+        emoji: "📊",
+        color: "#EEEEFF"
+      },
+      {
+        id: 3,
+        title: "UX Research Study",
+        description: "Conducted user interviews and usability tests for a campus app redesign. Delivered wireframes and a final prototype with measurable improvements.",
+        tags: ["UX Research", "Figma", "Prototyping"],
+        tagColor: "mint",
+        emoji: "🔍",
+        color: "#E0FBF4"
+      },
+      {
+        id: 4,
+        title: "E-commerce Web App",
+        description: "Developed a full-featured e-commerce site with product listings, cart, and checkout — built with React, .NET Web API, and a SQL Server database.",
+        tags: ["React", ".NET", "SQL Server"],
+        tagColor: "yellow",
+        emoji: "🛒",
+        color: "#FFF8E0"
+      },
+      {
+        id: 5,
         title: "Dairy Farm Inventory System",
         description: "Full-stack web application for managing farm medication inventory with user authentication, image uploads, and role-based access control. Features real-time inventory tracking, medication details with images, and comprehensive audit logging.",
-        longDescription: "A comprehensive inventory management system built for a dairy farm. This application allows farm staff to track medications, equipment, and supplies across different departments. Admins can add, edit, and delete inventory items with image uploads. The system includes role-based access control (Admin vs User views), real-time quantity tracking, and an audit log that tracks all changes made to the system for compliance and accountability.",
         tags: ["Node.js", "Express", "PostgreSQL", "Knex", "Multer", "EJS"],
         emoji: "🐄",
-        github: "https://github.com/karlieward/DairyFarm_Inventory",
-        images: [
-          { src: "/images/dairy-1.jpg", alt: "Login page" },
-          { src: "/images/dairy-2.jpg", alt: "Dashboard with departments" },
-          { src: "/images/dairy-3.jpg", alt: "Medication inventory" },
-          { src: "/images/dairy-4.jpg", alt: "Admin records" },
-          { src: "/images/dairy-5.jpg", alt: "Edit medication" }
-        ]
+        link: "https://github.com/karlieward/Karlie_Portfolio"
       }
     ],
     skills: {
