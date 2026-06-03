@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import dairy1 from '../assets/images/dairy-1.jpg'
 import dairy2 from '../assets/images/dairy-2.jpg'
 import dairy3 from '../assets/images/dairy-3.jpg'
@@ -13,6 +14,8 @@ const imageMap = {
 }
 
 export default function ProjectDetail({ project, onClose }) {
+  const [selectedImage, setSelectedImage] = useState(null)
+
   if (!project) return null;
 
   return (
@@ -108,8 +111,8 @@ export default function ProjectDetail({ project, onClose }) {
               </h2>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: 16,
+                gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
+                gap: 20,
               }}>
                 {project.images.map((image, idx) => {
                   const filename = image.src.split('/').pop()
@@ -117,6 +120,7 @@ export default function ProjectDetail({ project, onClose }) {
                   return (
                     <div
                       key={idx}
+                      onClick={() => setSelectedImage(imageSrc)}
                       style={{
                         borderRadius: 'var(--radius-lg)',
                         overflow: 'hidden',
@@ -127,6 +131,17 @@ export default function ProjectDetail({ project, onClose }) {
                         alignItems: 'center',
                         justifyContent: 'center',
                         color: '#9ca3af',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        transform: 'scale(1)',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'scale(1.02)'
+                        e.currentTarget.style.boxShadow = 'var(--shadow-md)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'scale(1)'
+                        e.currentTarget.style.boxShadow = 'var(--shadow-sm)'
                       }}
                     >
                       <img src={imageSrc} alt={image.alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -138,6 +153,75 @@ export default function ProjectDetail({ project, onClose }) {
           )}
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div
+          onClick={() => setSelectedImage(null)}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(0, 0, 0, 0.8)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1000,
+            cursor: 'pointer',
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: 'relative',
+              maxWidth: '90vw',
+              maxHeight: '90vh',
+            }}
+          >
+            <img
+              src={selectedImage}
+              alt="Full size"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                borderRadius: 'var(--radius-lg)',
+              }}
+            />
+            <button
+              onClick={() => setSelectedImage(null)}
+              style={{
+                position: 'absolute',
+                top: 16,
+                right: 16,
+                width: 40,
+                height: 40,
+                borderRadius: '50%',
+                background: 'rgba(255, 255, 255, 0.9)',
+                border: 'none',
+                cursor: 'pointer',
+                fontSize: '1.5rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = 'rgba(255, 255, 255, 1)'
+                e.target.style.transform = 'scale(1.1)'
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = 'rgba(255, 255, 255, 0.9)'
+                e.target.style.transform = 'scale(1)'
+              }}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
