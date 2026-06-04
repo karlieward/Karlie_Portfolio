@@ -7,7 +7,7 @@ const links = [
   { label: 'Contact', href: '#contact' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ selectedProject, onCloseProject }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -28,7 +28,16 @@ export default function Navbar() {
       borderBottom: scrolled ? '1px solid #e5e7eb' : 'none',
     }}>
       {/* Logo */}
-      <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: 0, textDecoration: 'none' }}>
+      <a
+        href={selectedProject ? '#' : '#hero'}
+        onClick={(e) => {
+          if (selectedProject) {
+            e.preventDefault()
+            onCloseProject()
+          }
+        }}
+        style={{ display: 'flex', alignItems: 'center', gap: 0, textDecoration: 'none', cursor: 'pointer' }}
+      >
         <span style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 800, fontSize: '1.1rem', color: '#000000' }}>
           karlie
         </span>
@@ -61,57 +70,6 @@ export default function Navbar() {
             {link.label}
           </a>
         ))}
-
-        {/* GitHub Link */}
-        <a
-          href="https://github.com/karlieward"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            padding: '8px 16px',
-            borderRadius: 6,
-            fontFamily: 'Plus Jakarta Sans',
-            fontWeight: 500,
-            fontSize: '0.95rem',
-            color: '#6b7280',
-            transition: 'all 0.3s',
-            textDecoration: 'none',
-          }}
-          onMouseEnter={e => {
-            e.target.style.color = '#000000'
-          }}
-          onMouseLeave={e => {
-            e.target.style.color = '#6b7280'
-          }}
-        >
-          GitHub
-        </a>
-
-        {/* LinkedIn Link */}
-        <a
-          href="https://www.linkedin.com/in/karlieward/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            padding: '8px 16px',
-            borderRadius: 6,
-            fontFamily: 'Plus Jakarta Sans',
-            fontWeight: 500,
-            fontSize: '0.95rem',
-            color: '#6b7280',
-            transition: 'all 0.3s',
-            textDecoration: 'none',
-            marginRight: 8,
-          }}
-          onMouseEnter={e => {
-            e.target.style.color = '#000000'
-          }}
-          onMouseLeave={e => {
-            e.target.style.color = '#6b7280'
-          }}
-        >
-          LinkedIn
-        </a>
 
         {/* Contact Button */}
         <a
@@ -166,26 +124,6 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a href="https://github.com/karlieward" target="_blank" rel="noopener noreferrer"
-             onClick={() => setMenuOpen(false)}
-             style={{
-               padding: '12px 16px', borderRadius: 8,
-               fontFamily: 'Plus Jakarta Sans', fontWeight: 600, fontSize: '1rem',
-               color: 'var(--dark)',
-               textDecoration: 'none',
-             }}>
-            GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/karlieward/" target="_blank" rel="noopener noreferrer"
-             onClick={() => setMenuOpen(false)}
-             style={{
-               padding: '12px 16px', borderRadius: 8,
-               fontFamily: 'Plus Jakarta Sans', fontWeight: 600, fontSize: '1rem',
-               color: 'var(--dark)',
-               textDecoration: 'none',
-             }}>
-            LinkedIn
-          </a>
           <a href="#contact" onClick={() => setMenuOpen(false)}
              className="btn btn-primary" style={{ marginTop: 8, justifyContent: 'center' }}>
             Contact

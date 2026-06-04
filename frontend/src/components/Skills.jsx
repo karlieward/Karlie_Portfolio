@@ -8,9 +8,6 @@ export default function Skills({ data }) {
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <div className="section-label">Capabilities</div>
           <h2 className="section-title">What I bring to the table.</h2>
-          <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            Technical chops and creative instincts — I believe the best digital experiences need both.
-          </p>
         </div>
 
         <div style={{

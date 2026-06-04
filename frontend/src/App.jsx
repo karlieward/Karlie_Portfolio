@@ -49,10 +49,14 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar selectedProject={selectedProject} onCloseProject={() => setSelectedProject(null)} />
       <main>
-        <Hero data={portfolioData.hero} />
-        <About data={portfolioData.about} />
+        {!selectedProject && (
+          <>
+            <Hero data={portfolioData.hero} />
+            <About data={portfolioData.about} />
+          </>
+        )}
         {selectedProject ? (
           <ProjectDetail project={selectedProject} onClose={() => setSelectedProject(null)} />
         ) : (
@@ -76,7 +80,7 @@ function getFallbackData() {
     hero: {
       greeting: "Hi, I'm",
       name: "Karlie",
-      tagline: "Information Systems student passionate about AI and creating intuitive digital experiences.",
+      tagline: "Information Systems student who thinks good design and clean code belong together.",
       cta: "See My Work",
       ctaSecondary: "About Me"
     },
