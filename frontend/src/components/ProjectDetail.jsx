@@ -21,22 +21,35 @@ export default function ProjectDetail({ project, onClose }) {
   return (
     <section id="project-detail" className="section" style={{ borderTop: '1px solid #e5e7eb', background: '#fafafa' }}>
       <div className="container">
-        {/* Close button */}
+        {/* Back button */}
         <button
           onClick={onClose}
           style={{
             background: 'none',
             border: 'none',
-            fontSize: '1.5rem',
-            cursor: 'pointer',
+            padding: '8px 0',
             color: '#6b7280',
-            marginBottom: 32,
+            cursor: 'pointer',
+            fontFamily: 'Plus Jakarta Sans',
+            fontWeight: 500,
+            fontSize: '0.95rem',
+            marginBottom: 40,
             transition: 'color 0.3s ease',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 6,
           }}
-          onMouseEnter={(e) => e.target.style.color = 'var(--dark)'}
-          onMouseLeave={(e) => e.target.style.color = '#6b7280'}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.color = 'var(--dark)'
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.color = '#6b7280'
+          }}
         >
-          ← Back to Projects
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          Back to Portfolio
         </button>
 
         <div style={{ maxWidth: 900, margin: '0 auto' }}>

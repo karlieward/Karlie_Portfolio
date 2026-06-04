@@ -76,16 +76,16 @@ function getFallbackData() {
     hero: {
       greeting: "Hi, I'm",
       name: "Karlie",
-      tagline: "Information Systems grad who thinks good design and clean code belong together.",
+      tagline: "Information Systems student passionate about AI and creating intuitive digital experiences.",
       cta: "See My Work",
       ctaSecondary: "About Me"
     },
     about: {
       bio: "I'm a recent Information Systems graduate with a passion for bridging the gap between technology and creativity. I love building things that are both functional and beautiful — whether that's a polished web app, a thoughtfully designed UI, or a data-driven solution that actually makes sense to the people using it.",
       highlights: [
-        "B.S. Information Systems — BYU",
+        "B.S. Information Systems — BYU (graduating soon)",
         "Loves UI/UX + full-stack development",
-        "Figma to React pipeline enthusiast",
+        "Passionate about AI and emerging technologies",
         "Always learning something new"
       ]
     },
@@ -109,20 +109,28 @@ function getFallbackData() {
     ],
     skills: {
       technical: [
-        { name: "React / JavaScript", level: 90 },
-        { name: "C# / .NET", level: 85 },
-        { name: "SQL / Databases", level: 80 },
-        { name: "HTML & CSS", level: 95 },
-        { name: "Python", level: 70 },
-        { name: "Git & Version Control", level: 85 }
+        "React / JavaScript",
+        "TypeScript",
+        "Node.js / Express",
+        "PostgreSQL / SQL",
+        "C# / .NET",
+        "HTML & CSS",
+        "Git & Version Control",
+        "Python",
+        "Knex",
+        "Multer",
+        "EJS",
+        "APIs & REST"
       ],
       creative: [
-        { name: "Figma & Prototyping", level: 92 },
-        { name: "UI/UX Design", level: 88 },
-        { name: "Brand Identity", level: 80 },
-        { name: "Typography & Color", level: 85 }
-      ],
-      tools: ["VS Code", "Visual Studio", "Figma", "Postman", "GitHub", "Azure", "Notion", "Adobe Suite"]
+        "UI/UX Design",
+        "Figma & Prototyping",
+        "Brand Identity & Design",
+        "Typography & Color Theory",
+        "Web Design",
+        "User Research",
+        "Adobe Suite"
+      ]
     }
   }
 }
