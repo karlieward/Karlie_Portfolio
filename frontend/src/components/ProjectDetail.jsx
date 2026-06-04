@@ -130,21 +130,17 @@ export default function ProjectDetail({ project, onClose }) {
 
           {/* Images Gallery */}
           {project.images && project.images.length > 0 && (
-            <div>
-              <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: 24, color: 'var(--dark)' }}>
-                Explorations
-              </h2>
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 40,
-              }}>
-                {project.images.map((image, idx) => {
-                  const filename = image.src.split('/').pop()
-                  const imageSrc = imageMap[filename] || image.src
-                  return (
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 0,
+            }}>
+              {project.images.map((image, idx) => {
+                const filename = image.src.split('/').pop()
+                const imageSrc = imageMap[filename] || image.src
+                return (
+                  <div key={idx} style={{ borderTop: idx > 0 ? '1px solid #e5e7eb' : 'none', paddingTop: idx > 0 ? 40 : 0 }}>
                     <img
-                      key={idx}
                       src={imageSrc}
                       alt={image.alt}
                       onClick={() => setSelectedImage(imageSrc)}
@@ -155,9 +151,9 @@ export default function ProjectDetail({ project, onClose }) {
                         cursor: 'pointer',
                       }}
                     />
-                  )
-                })}
-              </div>
+                  </div>
+                )
+              })}
             </div>
           )}
         </div>
