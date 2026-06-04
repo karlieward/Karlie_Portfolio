@@ -83,6 +83,25 @@ export default function Navbar({ selectedProject, onCloseProject }) {
             {link.label}
           </a>
         ))}
+
+        {/* Contact Button */}
+        <a
+          href="#contact"
+          onClick={(e) => {
+            if (selectedProject) {
+              e.preventDefault()
+              onCloseProject()
+              setTimeout(() => {
+                const element = document.querySelector('#contact')
+                if (element) element.scrollIntoView({ behavior: 'smooth' })
+              }, 100)
+            }
+          }}
+          className="btn btn-primary"
+          style={{ padding: '10px 22px', fontSize: '0.88rem', marginLeft: 8 }}
+        >
+          Contact
+        </a>
       </div>
 
       {/* Mobile hamburger */}
@@ -138,6 +157,20 @@ export default function Navbar({ selectedProject, onCloseProject }) {
               {link.label}
             </a>
           ))}
+          <a href="#contact" onClick={(e) => {
+            setMenuOpen(false)
+            if (selectedProject) {
+              e.preventDefault()
+              onCloseProject()
+              setTimeout(() => {
+                const element = document.querySelector('#contact')
+                if (element) element.scrollIntoView({ behavior: 'smooth' })
+              }, 100)
+            }
+          }}
+             className="btn btn-primary" style={{ marginTop: 8, justifyContent: 'center' }}>
+            Contact
+          </a>
         </div>
       )}
 
