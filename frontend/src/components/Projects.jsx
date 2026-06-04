@@ -5,6 +5,41 @@ export default function Projects({ data, onProjectClick }) {
 
   return (
     <>
+      {/* Back button */}
+      <section className="section" style={{ borderTop: '1px solid #e5e7eb', background: '#fafafa', paddingBottom: 0 }}>
+        <div className="container">
+          <button
+            onClick={() => window.history.back()}
+            style={{
+              background: 'none',
+              border: 'none',
+              padding: '8px 0',
+              color: '#6b7280',
+              cursor: 'pointer',
+              fontFamily: 'Plus Jakarta Sans',
+              fontWeight: 500,
+              fontSize: '0.95rem',
+              marginBottom: 40,
+              transition: 'color 0.3s ease',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 6,
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = 'var(--dark)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = '#6b7280'
+            }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            Back to Projects
+          </button>
+        </div>
+      </section>
+
       {/* Quick GitHub Links Section */}
       <section id="github-links" className="section" style={{ borderTop: '1px solid #e5e7eb', background: '#fafafa' }}>
         <div className="container">

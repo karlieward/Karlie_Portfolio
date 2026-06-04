@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import ProjectsLanding from './components/ProjectsLanding'
 import Projects from './components/Projects'
+import DesignProjects from './components/DesignProjects'
 import ProjectDetail from './components/ProjectDetail'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
@@ -12,6 +14,7 @@ function App() {
   const [portfolioData, setPortfolioData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [selectedProject, setSelectedProject] = useState(null)
+  const [projectCategory, setProjectCategory] = useState(null) // null = landing, 'technical' = tech, 'design' = design
 
   useEffect(() => {
     // Fetch data from .NET API
@@ -51,7 +54,7 @@ function App() {
     <>
       <Navbar selectedProject={selectedProject} onCloseProject={() => setSelectedProject(null)} />
       <main>
-        {!selectedProject && (
+        {!selectedProject && !projectCategory && (
           <>
             <Hero data={portfolioData.hero} />
             <About data={portfolioData.about} />
@@ -59,12 +62,18 @@ function App() {
         )}
         {selectedProject ? (
           <ProjectDetail project={selectedProject} onClose={() => setSelectedProject(null)} />
-        ) : (
+        ) : projectCategory === 'technical' ? (
           <>
             <Projects
               data={portfolioData.projects}
               onProjectClick={setSelectedProject}
             />
+          </>
+        ) : projectCategory === 'design' ? (
+          <DesignProjects onBack={() => setProjectCategory(null)} />
+        ) : (
+          <>
+            <ProjectsLanding onSelectCategory={setProjectCategory} />
             <Skills data={portfolioData.skills} />
             <Contact />
           </>
