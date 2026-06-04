@@ -29,11 +29,14 @@ export default function Navbar({ selectedProject, onCloseProject }) {
     }}>
       {/* Logo */}
       <a
-        href={selectedProject ? '#' : '#hero'}
+        href="#hero"
         onClick={(e) => {
           if (selectedProject) {
             e.preventDefault()
             onCloseProject()
+            setTimeout(() => {
+              window.scrollTo(0, 0)
+            }, 100)
           }
         }}
         style={{ display: 'flex', alignItems: 'center', gap: 0, textDecoration: 'none', cursor: 'pointer' }}
@@ -50,6 +53,16 @@ export default function Navbar({ selectedProject, onCloseProject }) {
           <a
             key={link.label}
             href={link.href}
+            onClick={(e) => {
+              if (selectedProject) {
+                e.preventDefault()
+                onCloseProject()
+                setTimeout(() => {
+                  const element = document.querySelector(link.href)
+                  if (element) element.scrollIntoView({ behavior: 'smooth' })
+                }, 100)
+              }
+            }}
             style={{
               padding: '8px 16px',
               borderRadius: 6,
@@ -70,15 +83,6 @@ export default function Navbar({ selectedProject, onCloseProject }) {
             {link.label}
           </a>
         ))}
-
-        {/* Contact Button */}
-        <a
-          href="#contact"
-          className="btn btn-primary"
-          style={{ padding: '10px 22px', fontSize: '0.88rem' }}
-        >
-          Contact
-        </a>
       </div>
 
       {/* Mobile hamburger */}
@@ -114,7 +118,17 @@ export default function Navbar({ selectedProject, onCloseProject }) {
         }}>
           {links.map(link => (
             <a key={link.label} href={link.href}
-               onClick={() => setMenuOpen(false)}
+               onClick={(e) => {
+                 setMenuOpen(false)
+                 if (selectedProject) {
+                   e.preventDefault()
+                   onCloseProject()
+                   setTimeout(() => {
+                     const element = document.querySelector(link.href)
+                     if (element) element.scrollIntoView({ behavior: 'smooth' })
+                   }, 100)
+                 }
+               }}
                style={{
                  padding: '12px 16px', borderRadius: 8,
                  fontFamily: 'Plus Jakarta Sans', fontWeight: 600, fontSize: '1rem',
@@ -124,10 +138,6 @@ export default function Navbar({ selectedProject, onCloseProject }) {
               {link.label}
             </a>
           ))}
-          <a href="#contact" onClick={() => setMenuOpen(false)}
-             className="btn btn-primary" style={{ marginTop: 8, justifyContent: 'center' }}>
-            Contact
-          </a>
         </div>
       )}
 

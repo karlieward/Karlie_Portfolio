@@ -54,7 +54,7 @@ export default function Contact() {
               type="submit"
               disabled={status === 'sending'}
               className="btn btn-primary"
-              style={{ alignSelf: 'flex-start', fontSize: '0.9rem', opacity: status === 'sending' ? 0.7 : 1 }}
+              style={{ alignSelf: 'center', fontSize: '0.9rem', opacity: status === 'sending' ? 0.7 : 1 }}
             >
               {status === 'sending' ? 'Sending...' : 'Send Message'}
             </button>
@@ -81,11 +81,41 @@ export default function Contact() {
             )}
           </form>
 
-          {/* Email fallback */}
+          {/* Email fallback and social links */}
           <div style={{
-            marginTop: 32, textAlign: 'center', fontSize: '0.95rem', color: '#6b7280'
+            marginTop: 32, textAlign: 'center', display: 'flex', flexDirection: 'column', gap: 16
           }}>
-            <p>Or email me directly at <a href="mailto:karlie3@byu.edu" style={{ color: 'var(--dark)', fontWeight: 600, textDecoration: 'none' }}>karlie3@byu.edu</a></p>
+            <p style={{ fontSize: '0.95rem', color: '#6b7280', margin: 0 }}>
+              Or email me directly at <a href="mailto:karlie3@byu.edu" style={{ color: 'var(--dark)', fontWeight: 600, textDecoration: 'none' }}>karlie3@byu.edu</a>
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
+              <a href="https://www.linkedin.com/in/karlieward/" target="_blank" rel="noopener noreferrer"
+                 style={{
+                   fontSize: '0.95rem',
+                   color: 'var(--dark)',
+                   fontWeight: 600,
+                   textDecoration: 'none',
+                   transition: 'color 0.3s',
+                 }}
+                 onMouseEnter={(e) => e.target.style.color = '#6C63FF'}
+                 onMouseLeave={(e) => e.target.style.color = 'var(--dark)'}
+              >
+                LinkedIn
+              </a>
+              <a href="https://github.com/karlieward" target="_blank" rel="noopener noreferrer"
+                 style={{
+                   fontSize: '0.95rem',
+                   color: 'var(--dark)',
+                   fontWeight: 600,
+                   textDecoration: 'none',
+                   transition: 'color 0.3s',
+                 }}
+                 onMouseEnter={(e) => e.target.style.color = '#6C63FF'}
+                 onMouseLeave={(e) => e.target.style.color = 'var(--dark)'}
+              >
+                GitHub
+              </a>
+            </div>
           </div>
         </div>
       </div>

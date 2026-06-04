@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import dairy1 from '../assets/images/dairy-1.jpg'
 import dairy2 from '../assets/images/dairy-2.jpg'
 import dairy3 from '../assets/images/dairy-3.jpg'
@@ -15,6 +15,10 @@ const imageMap = {
 
 export default function ProjectDetail({ project, onClose }) {
   const [selectedImage, setSelectedImage] = useState(null)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [project])
 
   if (!project) return null;
 
