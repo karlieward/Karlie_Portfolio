@@ -143,34 +143,18 @@ export default function ProjectDetail({ project, onClose }) {
                   const filename = image.src.split('/').pop()
                   const imageSrc = imageMap[filename] || image.src
                   return (
-                    <div
+                    <img
                       key={idx}
+                      src={imageSrc}
+                      alt={image.alt}
                       onClick={() => setSelectedImage(imageSrc)}
                       style={{
-                        borderRadius: 'var(--radius-lg)',
-                        overflow: 'hidden',
-                        border: '1px solid #e5e7eb',
-                        background: '#f3f4f6',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: '#9ca3af',
-                        cursor: 'pointer',
-                        transition: 'all 0.3s ease',
-                        transform: 'scale(1)',
                         width: '100%',
+                        height: 'auto',
+                        display: 'block',
+                        cursor: 'pointer',
                       }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'scale(1.01)'
-                        e.currentTarget.style.boxShadow = 'var(--shadow-md)'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'scale(1)'
-                        e.currentTarget.style.boxShadow = 'var(--shadow-sm)'
-                      }}
-                    >
-                      <img src={imageSrc} alt={image.alt} style={{ width: '100%', height: 'auto', display: 'block' }} />
-                    </div>
+                    />
                   )
                 })}
               </div>
