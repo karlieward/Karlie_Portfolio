@@ -8,9 +8,13 @@ export default function Footer() {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      gap: 24,
+      gap: 32,
       flexWrap: 'wrap',
     }}>
+      <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>
+        React • Vite • Vercel
+      </span>
+
       <span>Built by Karlie</span>
 
       {/* Social Links */}
@@ -68,10 +72,6 @@ export default function Footer() {
           </svg>
         </a>
       </div>
-
-      <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>
-        React • Vite • Vercel
-      </span>
     </footer>
   )
 }

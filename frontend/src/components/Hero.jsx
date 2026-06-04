@@ -26,11 +26,12 @@ export default function Hero({ data }) {
 
           {/* Tagline */}
           <p style={{
-            fontSize: 'clamp(0.9rem, 1.7vw, 1.1rem)',
-            color: '#6b7280', lineHeight: 1.6,
+            fontSize: 'clamp(0.8rem, 1.5vw, 0.95rem)',
+            color: '#6b7280', lineHeight: 1.5,
             marginBottom: 48,
             animation: 'fadeUp 0.6s ease 0.15s both',
             fontWeight: 400,
+            whiteSpace: 'nowrap',
           }}>
             {data.tagline}
           </p>
