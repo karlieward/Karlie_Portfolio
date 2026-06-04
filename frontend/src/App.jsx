@@ -80,7 +80,7 @@ function getFallbackData() {
     hero: {
       greeting: "Hi, I'm",
       name: "Karlie",
-      tagline: "Information Systems student passionate about elegant design and clean code.",
+      tagline: "Information Systems student who thinks good design and clean code belong together.",
       cta: "See My Work",
       ctaSecondary: "About Me"
     },
