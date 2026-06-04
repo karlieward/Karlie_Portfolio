@@ -52,7 +52,12 @@ function App() {
 
   return (
     <>
-      <Navbar selectedProject={selectedProject} onCloseProject={() => setSelectedProject(null)} />
+      <Navbar
+        selectedProject={selectedProject}
+        onCloseProject={() => setSelectedProject(null)}
+        projectCategory={projectCategory}
+        onResetProjects={() => setProjectCategory(null)}
+      />
       <main>
         {!selectedProject && !projectCategory && (
           <>
@@ -67,10 +72,18 @@ function App() {
             <Projects
               data={portfolioData.projects}
               onProjectClick={setSelectedProject}
+              onBack={() => setProjectCategory(null)}
             />
           </>
         ) : projectCategory === 'design' ? (
-          <DesignProjects onBack={() => setProjectCategory(null)} />
+          <>
+            <DesignProjects
+              data={portfolioData.designProjects}
+              onProjectClick={setSelectedProject}
+              onBack={() => setProjectCategory(null)}
+            />
+          </>
+        )
         ) : (
           <>
             <ProjectsLanding onSelectCategory={setProjectCategory} />
@@ -102,6 +115,22 @@ function getFallbackData() {
         "Always learning something new"
       ]
     },
+    designProjects: [
+      {
+        id: 1,
+        title: "Wayfinding Map",
+        description: "An exploration of logo design through wayfinding concepts",
+        longDescription: "A comprehensive logo design exploration project that investigates wayfinding and navigation concepts through visual design. This project showcases the iterative design process from initial sketches through digital refinement, demonstrating design evolution across multiple concepts.",
+        tags: ["Logo Design", "Branding", "Figma", "Adobe Illustrator", "Visual Design"],
+        emoji: "🗺️",
+        images: [
+          { src: "/images/WF-01.svg", alt: "Wayfinding exploration 1" },
+          { src: "/images/WF-02.svg", alt: "Wayfinding exploration 2" },
+          { src: "/images/WF-03.svg", alt: "Wayfinding exploration 3" },
+          { src: "/images/WF-04.svg", alt: "Wayfinding exploration 4" }
+        ]
+      }
+    ],
     projects: [
       {
         id: 1,

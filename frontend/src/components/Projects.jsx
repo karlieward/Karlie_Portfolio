@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function Projects({ data, onProjectClick }) {
+export default function Projects({ data, onProjectClick, onBack }) {
   const [hovered, setHovered] = useState(null)
 
   return (
@@ -9,7 +9,7 @@ export default function Projects({ data, onProjectClick }) {
       <section className="section" style={{ borderTop: '1px solid #e5e7eb', background: '#fafafa', paddingBottom: 0 }}>
         <div className="container">
           <button
-            onClick={() => window.history.back()}
+            onClick={onBack}
             style={{
               background: 'none',
               border: 'none',

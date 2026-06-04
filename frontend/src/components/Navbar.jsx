@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 
 const links = [
   { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
+  { label: 'Projects', href: '#projects', special: true },
   { label: 'Skills', href: '#skills' },
 ]
 
-export default function Navbar({ selectedProject, onCloseProject }) {
+export default function Navbar({ selectedProject, onCloseProject, projectCategory, onResetProjects }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -30,13 +30,14 @@ export default function Navbar({ selectedProject, onCloseProject }) {
       <a
         href="#hero"
         onClick={(e) => {
-          if (selectedProject) {
-            e.preventDefault()
+          e.preventDefault()
+          if (selectedProject || projectCategory) {
             onCloseProject()
-            setTimeout(() => {
-              window.scrollTo(0, 0)
-            }, 100)
+            onResetProjects()
           }
+          setTimeout(() => {
+            window.scrollTo(0, 0)
+          }, 100)
         }}
         style={{ display: 'flex', alignItems: 'center', gap: 0, textDecoration: 'none', cursor: 'pointer' }}
       >
@@ -53,9 +54,18 @@ export default function Navbar({ selectedProject, onCloseProject }) {
             key={link.label}
             href={link.href}
             onClick={(e) => {
-              if (selectedProject) {
+              if (link.special) {
                 e.preventDefault()
-                onCloseProject()
+                if (selectedProject) onCloseProject()
+                onResetProjects()
+                setTimeout(() => {
+                  const element = document.querySelector(link.href)
+                  if (element) element.scrollIntoView({ behavior: 'smooth' })
+                }, 100)
+              } else if (selectedProject || projectCategory) {
+                e.preventDefault()
+                if (selectedProject) onCloseProject()
+                if (projectCategory) onResetProjects()
                 setTimeout(() => {
                   const element = document.querySelector(link.href)
                   if (element) element.scrollIntoView({ behavior: 'smooth' })
@@ -87,9 +97,10 @@ export default function Navbar({ selectedProject, onCloseProject }) {
         <a
           href="#contact"
           onClick={(e) => {
-            if (selectedProject) {
+            if (selectedProject || projectCategory) {
               e.preventDefault()
-              onCloseProject()
+              if (selectedProject) onCloseProject()
+              if (projectCategory) onResetProjects()
               setTimeout(() => {
                 const element = document.querySelector('#contact')
                 if (element) element.scrollIntoView({ behavior: 'smooth' })
@@ -138,9 +149,18 @@ export default function Navbar({ selectedProject, onCloseProject }) {
             <a key={link.label} href={link.href}
                onClick={(e) => {
                  setMenuOpen(false)
-                 if (selectedProject) {
+                 if (link.special) {
                    e.preventDefault()
-                   onCloseProject()
+                   if (selectedProject) onCloseProject()
+                   onResetProjects()
+                   setTimeout(() => {
+                     const element = document.querySelector(link.href)
+                     if (element) element.scrollIntoView({ behavior: 'smooth' })
+                   }, 100)
+                 } else if (selectedProject || projectCategory) {
+                   e.preventDefault()
+                   if (selectedProject) onCloseProject()
+                   if (projectCategory) onResetProjects()
                    setTimeout(() => {
                      const element = document.querySelector(link.href)
                      if (element) element.scrollIntoView({ behavior: 'smooth' })
@@ -158,9 +178,10 @@ export default function Navbar({ selectedProject, onCloseProject }) {
           ))}
           <a href="#contact" onClick={(e) => {
             setMenuOpen(false)
-            if (selectedProject) {
+            if (selectedProject || projectCategory) {
               e.preventDefault()
-              onCloseProject()
+              if (selectedProject) onCloseProject()
+              if (projectCategory) onResetProjects()
               setTimeout(() => {
                 const element = document.querySelector('#contact')
                 if (element) element.scrollIntoView({ behavior: 'smooth' })
