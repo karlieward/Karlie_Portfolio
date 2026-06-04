@@ -83,7 +83,6 @@ function App() {
               onBack={() => setProjectCategory(null)}
             />
           </>
-        )
         ) : (
           <>
             <ProjectsLanding onSelectCategory={setProjectCategory} />
