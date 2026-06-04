@@ -132,12 +132,12 @@ export default function ProjectDetail({ project, onClose }) {
           {project.images && project.images.length > 0 && (
             <div>
               <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: 24, color: 'var(--dark)' }}>
-                Gallery
+                Explorations
               </h2>
               <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
-                gap: 20,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 40,
               }}>
                 {project.images.map((image, idx) => {
                   const filename = image.src.split('/').pop()
@@ -151,7 +151,6 @@ export default function ProjectDetail({ project, onClose }) {
                         overflow: 'hidden',
                         border: '1px solid #e5e7eb',
                         background: '#f3f4f6',
-                        aspectRatio: '16/9',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -159,9 +158,10 @@ export default function ProjectDetail({ project, onClose }) {
                         cursor: 'pointer',
                         transition: 'all 0.3s ease',
                         transform: 'scale(1)',
+                        width: '100%',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'scale(1.02)'
+                        e.currentTarget.style.transform = 'scale(1.01)'
                         e.currentTarget.style.boxShadow = 'var(--shadow-md)'
                       }}
                       onMouseLeave={(e) => {
@@ -169,7 +169,7 @@ export default function ProjectDetail({ project, onClose }) {
                         e.currentTarget.style.boxShadow = 'var(--shadow-sm)'
                       }}
                     >
-                      <img src={imageSrc} alt={image.alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src={imageSrc} alt={image.alt} style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                   )
                 })}

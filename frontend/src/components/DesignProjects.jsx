@@ -84,8 +84,13 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                     justifyContent: 'center',
                     fontSize: '3rem',
                     borderBottom: '1px solid #e5e7eb',
+                    overflow: 'hidden',
                   }}>
-                    {project.emoji}
+                    {project.preview ? (
+                      <img src={project.preview} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 16 }} />
+                    ) : (
+                      project.emoji
+                    )}
                   </div>
 
                   {/* Content */}
