@@ -13,7 +13,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
             style={{
               background: 'none',
               border: 'none',
-              padding: '8px 0',
+              padding: '8px 8px',
               color: '#6b7280',
               cursor: 'pointer',
               fontFamily: 'Plus Jakarta Sans',

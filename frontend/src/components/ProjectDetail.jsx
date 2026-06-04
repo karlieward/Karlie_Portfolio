@@ -4,6 +4,7 @@ import dairy2 from '../assets/images/dairy-2.jpg'
 import dairy3 from '../assets/images/dairy-3.jpg'
 import dairy4 from '../assets/images/dairy-4.jpg'
 import dairy5 from '../assets/images/dairy-5.jpg'
+import wf0 from '../assets/images/WF-00.png'
 import wf1 from '../assets/images/WF-01.svg'
 import wf2 from '../assets/images/WF-02.svg'
 import wf3 from '../assets/images/WF-03.svg'
@@ -15,6 +16,7 @@ const imageMap = {
   'dairy-3.jpg': dairy3,
   'dairy-4.jpg': dairy4,
   'dairy-5.jpg': dairy5,
+  'WF-00.png': wf0,
   'WF-01.svg': wf1,
   'WF-02.svg': wf2,
   'WF-03.svg': wf3,
@@ -149,6 +151,7 @@ export default function ProjectDetail({ project, onClose }) {
                         height: 'auto',
                         display: 'block',
                         cursor: 'pointer',
+                        marginBottom: idx < project.images.length - 1 ? 60 : 0,
                       }}
                     />
                   </div>

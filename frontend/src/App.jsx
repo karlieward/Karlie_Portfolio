@@ -120,7 +120,7 @@ function getFallbackData() {
         title: "Wayfinding Map",
         description: "An exploration of logo design through wayfinding concepts",
         longDescription: "A comprehensive logo design exploration project that investigates wayfinding and navigation concepts through visual design. This project showcases the iterative design process from initial sketches through digital refinement, demonstrating design evolution across multiple concepts.",
-        tags: ["Logo Design", "Branding", "Figma", "Adobe Illustrator", "Visual Design"],
+        tags: ["Figma", "Adobe Illustrator"],
         preview: "/images/WF-00.png",
         images: [
           { src: "/images/WF-01.svg", alt: "Wayfinding exploration 1" },
