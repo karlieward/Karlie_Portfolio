@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import wf0 from '../assets/images/WF-00.png'
 import hw1 from '../assets/images/HW-01.png'
 import na1 from '../assets/images/NA-01.png'
@@ -13,6 +13,10 @@ const previewMap = {
 
 export default function DesignProjects({ data, onProjectClick, onBack }) {
   const [hovered, setHovered] = useState(null)
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' })
+  }, [])
 
 
   return (
@@ -53,7 +57,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
       </section>
 
       {/* Design Projects Section */}
-      <section id="projects" className="section" style={{ borderTop: '1px solid #e5e7eb', background: '#fafafa' }}>
+      <section id="projects" className="section" style={{ background: '#fafafa' }}>
         <div className="container">
           <div style={{ marginBottom: 60 }}>
             <h2 className="section-title">Design Projects</h2>
