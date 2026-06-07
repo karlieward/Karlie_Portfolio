@@ -89,9 +89,17 @@ export default function ProjectDetail({ project, onClose }) {
   return (
     <section id="project-detail" className="section" style={{ borderTop: '1px solid #e5e7eb', background: '#fafafa' }}>
       <div className="container">
+        <div className="section-label" style={{ marginBottom: 16 }}>Design Work</div>
+
         {/* Back button */}
         <button
-          onClick={onClose}
+          onClick={() => {
+            onClose()
+            setTimeout(() => {
+              const element = document.querySelector('#projects')
+              if (element) element.scrollIntoView({ behavior: 'smooth' })
+            }, 100)
+          }}
           style={{
             background: 'none',
             border: 'none',
