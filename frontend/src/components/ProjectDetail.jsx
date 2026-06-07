@@ -81,7 +81,8 @@ export default function ProjectDetail({ project, onClose }) {
   const [selectedImage, setSelectedImage] = useState(null)
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
   }, [project])
 
   if (!project) return null;
@@ -89,17 +90,9 @@ export default function ProjectDetail({ project, onClose }) {
   return (
     <section id="project-detail" className="section" style={{ borderTop: '1px solid #e5e7eb', background: '#fafafa' }}>
       <div className="container">
-        <div className="section-label" style={{ marginBottom: 16 }}>Design Work</div>
-
         {/* Back button */}
         <button
-          onClick={() => {
-            onClose()
-            setTimeout(() => {
-              const element = document.querySelector('#projects')
-              if (element) element.scrollIntoView({ behavior: 'smooth' })
-            }, 100)
-          }}
+          onClick={onClose}
           style={{
             background: 'none',
             border: 'none',

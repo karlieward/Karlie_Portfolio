@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import wf0 from '../assets/images/WF-00.png'
 import hw1 from '../assets/images/HW-01.png'
 import na1 from '../assets/images/NA-01.png'
@@ -13,6 +13,11 @@ const previewMap = {
 
 export default function DesignProjects({ data, onProjectClick, onBack }) {
   const [hovered, setHovered] = useState(null)
+
+  useEffect(() => {
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+  }, [])
 
   return (
     <>
