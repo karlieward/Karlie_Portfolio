@@ -1,4 +1,11 @@
 import { useState } from 'react'
+import wf0 from '../assets/images/WF-00.png'
+import hw1 from '../assets/images/HW-01.png'
+
+const previewMap = {
+  'WF-00.png': wf0,
+  'HW-01.png': hw1,
+}
 
 export default function DesignProjects({ data, onProjectClick, onBack }) {
   const [hovered, setHovered] = useState(null)
@@ -87,7 +94,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                     overflow: 'hidden',
                   }}>
                     {project.preview ? (
-                      <img src={project.preview} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 16 }} />
+                      <img src={previewMap[project.preview.split('/').pop()] || project.preview} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 16 }} />
                     ) : (
                       project.emoji
                     )}

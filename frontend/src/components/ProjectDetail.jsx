@@ -9,6 +9,13 @@ import wf1 from '../assets/images/WF-01.svg'
 import wf2 from '../assets/images/WF-02.svg'
 import wf3 from '../assets/images/WF-03.svg'
 import wf4 from '../assets/images/WF-04.svg'
+import hw1 from '../assets/images/HW-01.png'
+import hw2 from '../assets/images/HW-02.png'
+import hw3 from '../assets/images/HW-03.png'
+import hw4 from '../assets/images/HW-04.png'
+import hw5 from '../assets/images/HW-05.png'
+import hw6 from '../assets/images/HW-06.png'
+import hw7 from '../assets/images/HW-07.png'
 
 const imageMap = {
   'dairy-1.jpg': dairy1,
@@ -21,6 +28,13 @@ const imageMap = {
   'WF-02.svg': wf2,
   'WF-03.svg': wf3,
   'WF-04.svg': wf4,
+  'HW-01.png': hw1,
+  'HW-02.png': hw2,
+  'HW-03.png': hw3,
+  'HW-04.png': hw4,
+  'HW-05.png': hw5,
+  'HW-06.png': hw6,
+  'HW-07.png': hw7,
 }
 
 export default function ProjectDetail({ project, onClose }) {
@@ -151,7 +165,7 @@ export default function ProjectDetail({ project, onClose }) {
                         height: 'auto',
                         display: 'block',
                         cursor: 'pointer',
-                        marginBottom: idx < project.images.length - 1 ? 60 : 0,
+                        marginBottom: idx < project.images.length - 1 ? 90 : 0,
                       }}
                     />
                   </div>

@@ -128,6 +128,23 @@ function getFallbackData() {
           { src: "/images/WF-03.svg", alt: "Wayfinding exploration 3" },
           { src: "/images/WF-04.svg", alt: "Wayfinding exploration 4" }
         ]
+      },
+      {
+        id: 2,
+        title: "Hello, World",
+        description: "Website redesign focusing on digital hierarchy and responsive design",
+        longDescription: "A comprehensive website redesign project that emphasizes digital hierarchy and responsive design principles. This project demonstrates the design process from research and user personas through styling and implementation across desktop and mobile platforms.",
+        tags: ["Figma", "Adobe Illustrator"],
+        preview: "HW-01.png",
+        images: [
+          { src: "/images/HW-01.png", alt: "Hello World exploration 1" },
+          { src: "/images/HW-02.png", alt: "Hello World exploration 2" },
+          { src: "/images/HW-03.png", alt: "Hello World exploration 3" },
+          { src: "/images/HW-04.png", alt: "Hello World exploration 4" },
+          { src: "/images/HW-05.png", alt: "Hello World exploration 5" },
+          { src: "/images/HW-06.png", alt: "Hello World exploration 6" },
+          { src: "/images/HW-07.png", alt: "Hello World exploration 7" }
+        ]
       }
     ],
     projects: [
