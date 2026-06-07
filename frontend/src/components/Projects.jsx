@@ -1,12 +1,16 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Projects({ data, onProjectClick, onBack }) {
   const [hovered, setHovered] = useState(null)
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' })
+  }, [])
+
   return (
     <>
       {/* Back button */}
-      <section className="section" style={{ borderTop: '1px solid #e5e7eb', background: '#fafafa', paddingBottom: 0 }}>
+      <section className="section" style={{ background: '#fafafa', paddingBottom: 0 }}>
         <div className="container">
           <button
             onClick={onBack}
@@ -40,11 +44,10 @@ export default function Projects({ data, onProjectClick, onBack }) {
         </div>
       </section>
 
-      {/* Quick GitHub Links Section */}
-      <section id="github-links" className="section" style={{ borderTop: '1px solid #e5e7eb', background: '#fafafa' }}>
+      {/* GitHub Links Section */}
+      <section className="section" style={{ background: '#fafafa' }}>
         <div className="container">
           <div style={{ marginBottom: 40 }}>
-            <div className="section-label">Quick Links</div>
             <h2 className="section-title">GitHub Projects</h2>
           </div>
 
@@ -95,11 +98,10 @@ export default function Projects({ data, onProjectClick, onBack }) {
         </div>
       </section>
 
-      {/* Featured Projects Section */}
-      <section id="projects" className="section" style={{ borderTop: '1px solid #e5e7eb' }}>
+      {/* Project Details Section */}
+      <section id="projects" className="section" style={{ background: '#fafafa', borderTop: '1px solid #e5e7eb' }}>
         <div className="container">
           <div style={{ marginBottom: 60 }}>
-            <div className="section-label">Featured Work</div>
             <h2 className="section-title">Project Details</h2>
           </div>
 
