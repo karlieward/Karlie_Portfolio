@@ -145,6 +145,30 @@ function getFallbackData() {
           { src: "/images/HW-06.png", alt: "Hello World exploration 6" },
           { src: "/images/HW-07.png", alt: "Hello World exploration 7" }
         ]
+      },
+      {
+        id: 3,
+        title: "Neue App",
+        description: "A student productivity app that helps organize and prioritize daily tasks",
+        longDescription: "A student productivity app designed to help organize and prioritize daily tasks across school, work, and personal responsibilities. Features integrated timers for time-boxed tasks and achievement badges to motivate completion.",
+        tags: ["Figma"],
+        preview: "NA-01.png",
+        images: [
+          { src: "/images/NA-01.png", alt: "Neue App exploration 1" },
+          { src: "/images/NA-02.png", alt: "Neue App exploration 2" },
+          { src: "/images/NA-03.png", alt: "Neue App exploration 3" },
+          { src: "/images/NA-04.png", alt: "Neue App exploration 4" },
+          { src: "/images/NA-05.png", alt: "Neue App exploration 5" },
+          { src: "/images/NA-06.png", alt: "Neue App exploration 6" },
+          { src: "/images/NA-07.png", alt: "Neue App exploration 7" },
+          { src: "/images/NA-08.png", alt: "Neue App exploration 8" },
+          { src: "/images/NA-09.png", alt: "Neue App exploration 9" },
+          { src: "/images/NA-10.png", alt: "Neue App exploration 10" },
+          { src: "/images/NA-11.png", alt: "Neue App exploration 11" },
+          { src: "/images/NA-12.png", alt: "Neue App exploration 12" },
+          { src: "/images/NA-13.png", alt: "Neue App exploration 13" },
+          { src: "/images/NA-14.png", alt: "Neue App exploration 14" }
+        ]
       }
     ],
     projects: [
