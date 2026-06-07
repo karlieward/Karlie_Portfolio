@@ -151,7 +151,7 @@ function getFallbackData() {
         title: "Neue App",
         description: "A student productivity app that helps organize and prioritize daily tasks",
         longDescription: "A student productivity app designed to help organize and prioritize daily tasks across school, work, and personal responsibilities. Features integrated timers for time-boxed tasks and achievement badges to motivate completion.",
-        tags: ["Figma"],
+        tags: ["Figma", "Adobe Illustrator"],
         preview: "NA-01.png",
         images: [
           { src: "/images/NA-01.png", alt: "Neue App exploration 1" },
@@ -168,6 +168,22 @@ function getFallbackData() {
           { src: "/images/NA-12.png", alt: "Neue App exploration 12" },
           { src: "/images/NA-13.png", alt: "Neue App exploration 13" },
           { src: "/images/NA-14.png", alt: "Neue App exploration 14" }
+        ]
+      },
+      {
+        id: 4,
+        title: "Make It Better",
+        description: "Research, design, and prototype a new interaction within an Apple app",
+        longDescription: "Research, design, and prototype a new interaction within the latest operating system of an Apple app which is consistent with the original application design and improves or is compatible with the core function of the app.",
+        tags: ["Figma"],
+        preview: "MIB-01.png",
+        images: [
+          { src: "/images/MIB-01.png", alt: "Make It Better exploration 1" },
+          { src: "/images/MIB-02.png", alt: "Make It Better exploration 2" },
+          { src: "/images/MIB-03.png", alt: "Make It Better exploration 3" },
+          { src: "/images/MIB-04.png", alt: "Make It Better exploration 4" },
+          { src: "/images/MIB-05.png", alt: "Make It Better exploration 5" },
+          { src: "/images/MIB-06.png", alt: "Make It Better exploration 6" }
         ]
       }
     ],

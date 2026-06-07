@@ -30,6 +30,12 @@ import na11 from '../assets/images/NA-11.png'
 import na12 from '../assets/images/NA-12.png'
 import na13 from '../assets/images/NA-13.png'
 import na14 from '../assets/images/NA-14.png'
+import mib1 from '../assets/images/MIB-01.png'
+import mib2 from '../assets/images/MIB-02.png'
+import mib3 from '../assets/images/MIB-03.png'
+import mib4 from '../assets/images/MIB-04.png'
+import mib5 from '../assets/images/MIB-05.png'
+import mib6 from '../assets/images/MIB-06.png'
 
 const imageMap = {
   'dairy-1.jpg': dairy1,
@@ -63,6 +69,12 @@ const imageMap = {
   'NA-12.png': na12,
   'NA-13.png': na13,
   'NA-14.png': na14,
+  'MIB-01.png': mib1,
+  'MIB-02.png': mib2,
+  'MIB-03.png': mib3,
+  'MIB-04.png': mib4,
+  'MIB-05.png': mib5,
+  'MIB-06.png': mib6,
 }
 
 export default function ProjectDetail({ project, onClose }) {
