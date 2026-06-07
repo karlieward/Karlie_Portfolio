@@ -91,7 +91,11 @@ export default function ProjectDetail({ project, onClose }) {
       <div className="container">
         {/* Back button */}
         <button
-          onClick={onClose}
+          onClick={() => {
+            onClose()
+            const element = document.querySelector('#projects')
+            if (element) element.scrollIntoView({ behavior: 'auto' })
+          }}
           style={{
             background: 'none',
             border: 'none',
