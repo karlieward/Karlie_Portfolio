@@ -203,6 +203,16 @@ function getFallbackData() {
           { src: "/images/dairy-4.jpg", alt: "Admin records" },
           { src: "/images/dairy-5.jpg", alt: "Edit medication" }
         ]
+      },
+      {
+        id: 2,
+        title: "Luna - Sleep Guardian",
+        description: "Full-stack sleep optimization and task management app built with a team using Scrum. Helps users protect their sleep schedule while managing daily tasks and calendar events.",
+        longDescription: "Luna is a comprehensive sleep optimization platform developed collaboratively using Scrum methodology. The app features sleep goal tracking, daily sleep check-ins with mood and sleep quality insights, task management with priority and due dates, calendar integration with event conflict detection, and bedtime reminders with email and SMS delivery. Users can view personalized sleep insights through charts, receive schedule-shifting suggestions to accommodate sleep goals, and track their sleep streak. Built with React 18 + TypeScript frontend, Node.js + Express backend, PostgreSQL database, and session-based authentication.",
+        tags: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Scrum"],
+        emoji: "🌙",
+        github: "https://github.com/karlieward/sleep-guardian",
+        images: []
       }
     ],
     skills: {
