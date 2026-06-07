@@ -80,11 +80,6 @@ const imageMap = {
 export default function ProjectDetail({ project, onClose }) {
   const [selectedImage, setSelectedImage] = useState(null)
 
-  useEffect(() => {
-    document.documentElement.scrollTop = 0
-    document.body.scrollTop = 0
-  }, [project])
-
   if (!project) return null;
 
   return (
