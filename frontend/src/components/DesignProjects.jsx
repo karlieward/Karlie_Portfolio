@@ -85,7 +85,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                 >
                   {/* Image area */}
                   <div style={{
-                    height: 280,
+                    height: 240,
                     background: '#f3f4f6',
                     display: 'flex',
                     alignItems: 'center',
@@ -104,7 +104,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
 
                   {/* Content */}
                   <div style={{
-                    padding: 16,
+                    padding: '12px 16px',
                     display: 'flex',
                     flexDirection: 'column',
                     flex: 1,
@@ -113,7 +113,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                       fontFamily: 'Plus Jakarta Sans',
                       fontWeight: 700,
                       fontSize: '1.1rem',
-                      marginBottom: 6,
+                      marginBottom: 4,
                       color: 'var(--dark)',
                     }}>
                       {project.title}
@@ -121,8 +121,8 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                     <p style={{
                       color: '#6b7280',
                       fontSize: '0.85rem',
-                      lineHeight: 1.5,
-                      marginBottom: 12,
+                      lineHeight: 1.4,
+                      marginBottom: 8,
                       flex: 1,
                     }}>
                       {project.description}
