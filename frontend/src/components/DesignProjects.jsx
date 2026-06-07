@@ -35,7 +35,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
               fontFamily: 'Plus Jakarta Sans',
               fontWeight: 500,
               fontSize: '0.95rem',
-              marginBottom: 40,
+              marginBottom: 16,
               transition: 'color 0.3s ease',
               display: 'flex',
               alignItems: 'center',

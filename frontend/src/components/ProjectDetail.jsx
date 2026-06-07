@@ -93,8 +93,10 @@ export default function ProjectDetail({ project, onClose }) {
         <button
           onClick={() => {
             onClose()
-            const element = document.querySelector('#projects')
-            if (element) element.scrollIntoView({ behavior: 'auto' })
+            setTimeout(() => {
+              const element = document.querySelector('#projects')
+              if (element) element.scrollIntoView({ behavior: 'auto' })
+            }, 0)
           }}
           style={{
             background: 'none',
