@@ -129,14 +129,14 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                     </p>
 
                     {/* Tags */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 8 }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 10 }}>
                       {project.tags.map(tag => (
                         <span key={tag} style={{
-                          padding: '3px 8px',
+                          padding: '5px 12px',
                           borderRadius: 4,
                           background: '#f3f4f6',
                           color: 'var(--dark)',
-                          fontSize: '0.7rem',
+                          fontSize: '0.8rem',
                           fontWeight: 600,
                           fontFamily: 'Plus Jakarta Sans',
                         }}>{tag}</span>
@@ -145,13 +145,13 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
 
                     {/* View Details indicator */}
                     <div style={{
-                      paddingTop: 8,
+                      paddingTop: 10,
                       borderTop: '1px solid #e5e7eb',
                       display: 'flex',
                       alignItems: 'center',
                       gap: 6,
                       color: '#6b7280',
-                      fontSize: '0.8rem',
+                      fontSize: '0.9rem',
                       transition: 'all 0.3s ease',
                       opacity: isHovered ? 1 : 0.7,
                     }}>
