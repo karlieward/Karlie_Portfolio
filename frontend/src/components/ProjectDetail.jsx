@@ -96,7 +96,7 @@ export default function ProjectDetail({ project, onClose }) {
             setTimeout(() => {
               const element = document.querySelector('#projects')
               if (element) element.scrollIntoView({ behavior: 'auto' })
-            }, 0)
+            }, 100)
           }}
           style={{
             background: 'none',
