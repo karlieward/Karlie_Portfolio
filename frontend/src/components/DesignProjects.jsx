@@ -80,11 +80,12 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                     display: 'flex',
                     flexDirection: 'column',
                     borderColor: isHovered ? 'var(--dark)' : '#e5e7eb',
+                    height: '100%',
                   }}
                 >
                   {/* Image area */}
                   <div style={{
-                    height: 200,
+                    height: 280,
                     background: '#f3f4f6',
                     display: 'flex',
                     alignItems: 'center',
@@ -92,9 +93,10 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                     fontSize: '3rem',
                     borderBottom: '1px solid #e5e7eb',
                     overflow: 'hidden',
+                    flex: 2,
                   }}>
                     {project.preview ? (
-                      <img src={previewMap[project.preview.split('/').pop()] || project.preview} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 16 }} />
+                      <img src={previewMap[project.preview.split('/').pop()] || project.preview} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     ) : (
                       project.emoji
                     )}
@@ -102,7 +104,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
 
                   {/* Content */}
                   <div style={{
-                    padding: 24,
+                    padding: 16,
                     display: 'flex',
                     flexDirection: 'column',
                     flex: 1,
@@ -110,31 +112,31 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                     <h3 style={{
                       fontFamily: 'Plus Jakarta Sans',
                       fontWeight: 700,
-                      fontSize: '1.15rem',
-                      marginBottom: 12,
+                      fontSize: '1.1rem',
+                      marginBottom: 6,
                       color: 'var(--dark)',
                     }}>
                       {project.title}
                     </h3>
                     <p style={{
                       color: '#6b7280',
-                      fontSize: '0.95rem',
-                      lineHeight: 1.6,
-                      marginBottom: 16,
+                      fontSize: '0.85rem',
+                      lineHeight: 1.5,
+                      marginBottom: 12,
                       flex: 1,
                     }}>
                       {project.description}
                     </p>
 
                     {/* Tags */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 8 }}>
                       {project.tags.map(tag => (
                         <span key={tag} style={{
-                          padding: '4px 10px',
+                          padding: '3px 8px',
                           borderRadius: 4,
                           background: '#f3f4f6',
                           color: 'var(--dark)',
-                          fontSize: '0.75rem',
+                          fontSize: '0.7rem',
                           fontWeight: 600,
                           fontFamily: 'Plus Jakarta Sans',
                         }}>{tag}</span>
@@ -143,14 +145,13 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
 
                     {/* View Details indicator */}
                     <div style={{
-                      marginTop: 16,
-                      paddingTop: 12,
+                      paddingTop: 8,
                       borderTop: '1px solid #e5e7eb',
                       display: 'flex',
                       alignItems: 'center',
                       gap: 6,
                       color: '#6b7280',
-                      fontSize: '0.85rem',
+                      fontSize: '0.8rem',
                       transition: 'all 0.3s ease',
                       opacity: isHovered ? 1 : 0.7,
                     }}>

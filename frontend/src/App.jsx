@@ -134,7 +134,7 @@ function getFallbackData() {
         title: "Hello, World",
         description: "Website redesign focusing on digital hierarchy and responsive design",
         longDescription: "A comprehensive website redesign project that emphasizes digital hierarchy and responsive design principles. This project demonstrates the design process from research and user personas through styling and implementation across desktop and mobile platforms.",
-        tags: ["Figma", "Adobe Illustrator"],
+        tags: ["Figma"],
         preview: "HW-01.png",
         images: [
           { src: "/images/HW-01.png", alt: "Hello World exploration 1" },
