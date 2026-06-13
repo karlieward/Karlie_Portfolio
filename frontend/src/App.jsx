@@ -191,18 +191,12 @@ function getFallbackData() {
       {
         id: 1,
         title: "Dairy Farm Inventory System",
-        description: "Full-stack web application for managing farm medication inventory with user authentication, image uploads, and role-based access control. Features real-time inventory tracking, medication details with images, and comprehensive audit logging.",
-        longDescription: "A comprehensive inventory management system built for a dairy farm. This application allows farm staff to track medications, equipment, and supplies across different departments. Admins can add, edit, and delete inventory items with image uploads. The system includes role-based access control (Admin vs User views), real-time quantity tracking, and an audit log that tracks all changes made to the system for compliance and accountability.",
-        tags: ["Node.js", "Express", "PostgreSQL", "Knex", "Multer", "EJS"],
+        description: "Full-stack inventory management system for tracking farm medications and supplies. Built with Node.js, Express, and PostgreSQL with role-based access control and comprehensive audit logging.",
+        longDescription: "A full-stack dairy farm inventory system that allows staff to track medications, equipment, and supplies across different departments. Features include user authentication, role-based access control (Admin vs User views), real-time inventory tracking with quantity management, image uploads for medications, and detailed audit logging of all system changes. Test the live app with default credentials: Username: karlie | Password: kw (admin access)",
+        tags: ["Node.js", "Express", "PostgreSQL", "Supabase", "EJS", "Render"],
         emoji: "🐄",
-        github: "https://github.com/karlieward/DairyFarm_Inventory",
-        images: [
-          { src: "/images/dairy-1.jpg", alt: "Login page" },
-          { src: "/images/dairy-2.jpg", alt: "Dashboard with departments" },
-          { src: "/images/dairy-3.jpg", alt: "Medication inventory" },
-          { src: "/images/dairy-4.jpg", alt: "Admin records" },
-          { src: "/images/dairy-5.jpg", alt: "Edit medication" }
-        ]
+        github: "https://dairy-farm-inventory.onrender.com",
+        images: []
       },
       {
         id: 2,
