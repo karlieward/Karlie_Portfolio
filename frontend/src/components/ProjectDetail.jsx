@@ -185,19 +185,69 @@ export default function ProjectDetail({ project, onClose }) {
                   <polyline points="15 3 21 3 21 9"></polyline>
                   <line x1="10" y1="14" x2="21" y2="3"></line>
                 </svg>
-                View on GitHub
+                {project.github.includes('render.com') ? 'Try the App' : 'View on GitHub'}
               </a>
             )}
           </div>
 
+          {/* Live App Card */}
+          {project.liveLink && (
+            <div style={{ marginBottom: 48 }}>
+              <a
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'block',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                }}
+              >
+                <div style={{
+                  border: '1px solid #e5e7eb',
+                  borderRadius: 'var(--radius-lg)',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease',
+                  transform: 'translateY(0)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
+                }}>
+                  {project.images && project.images[0] && (
+                    <img
+                      src={imageMap[project.images[0].src.split('/').pop()] || project.images[0].src}
+                      alt={project.images[0].alt}
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                        display: 'block',
+                      }}
+                    />
+                  )}
+                </div>
+              </a>
+              <div style={{ marginTop: 24, padding: '16px', background: '#f9fafb', borderRadius: 'var(--radius-lg)' }}>
+                <p style={{ fontSize: '0.9rem', color: '#6b7280', fontWeight: 600, marginBottom: 8 }}>Test Credentials (Admin):</p>
+                <p style={{ fontSize: '0.85rem', color: 'var(--dark)', fontFamily: 'monospace', marginBottom: 6 }}>Username: <strong>karlie</strong></p>
+                <p style={{ fontSize: '0.85rem', color: 'var(--dark)', fontFamily: 'monospace', marginBottom: 6 }}>Password: <strong>kw</strong></p>
+                <p style={{ fontSize: '0.85rem', color: '#6b7280', marginTop: 12 }}>Or try as a regular user: demo / demo</p>
+              </div>
+            </div>
+          )}
+
           {/* Images Gallery */}
-          {project.images && project.images.length > 0 && (
+          {project.images && project.images.length > 1 && (
             <div style={{
               display: 'flex',
               flexDirection: 'column',
               gap: 0,
             }}>
-              {project.images.map((image, idx) => {
+              {project.images.slice(1).map((image, idx) => {
                 const filename = image.src.split('/').pop()
                 const imageSrc = imageMap[filename] || image.src
                 return (
@@ -211,7 +261,7 @@ export default function ProjectDetail({ project, onClose }) {
                         height: 'auto',
                         display: 'block',
                         cursor: 'pointer',
-                        marginBottom: idx < project.images.length - 1 ? 90 : 0,
+                        marginBottom: idx < project.images.length - 2 ? 90 : 0,
                       }}
                     />
                   </div>

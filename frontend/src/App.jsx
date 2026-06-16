@@ -192,11 +192,14 @@ function getFallbackData() {
         id: 1,
         title: "Dairy Farm Inventory System",
         description: "Full-stack inventory management system for tracking farm medications and supplies. Built with Node.js, Express, and PostgreSQL with role-based access control and comprehensive audit logging.",
-        longDescription: "A full-stack dairy farm inventory system that allows staff to track medications, equipment, and supplies across different departments. Features include user authentication, role-based access control (Admin vs User views), real-time inventory tracking with quantity management, image uploads for medications, and detailed audit logging of all system changes. Test the live app with default credentials: Username: karlie | Password: kw (admin access)",
+        longDescription: "A full-stack dairy farm inventory system that allows staff to track medications, equipment, and supplies across different departments. Features include user authentication, role-based access control (Admin vs User views), real-time inventory tracking with quantity management, image uploads for medications, and detailed audit logging of all system changes.",
         tags: ["Node.js", "Express", "PostgreSQL", "Supabase", "EJS", "Render"],
         emoji: "🐄",
-        github: "https://dairy-farm-inventory.onrender.com",
-        images: []
+        github: "https://github.com/karlieward/DairyFarm_Inventory",
+        liveLink: "https://dairy-farm-inventory.onrender.com",
+        images: [
+          { src: "/images/dairy-1.jpg", alt: "Login page" }
+        ]
       },
       {
         id: 2,
