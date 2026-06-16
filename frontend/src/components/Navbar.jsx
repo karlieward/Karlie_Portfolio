@@ -60,7 +60,7 @@ export default function Navbar({ selectedProject, onCloseProject, projectCategor
                 onResetProjects()
                 setTimeout(() => {
                   const element = document.querySelector(link.href)
-                  if (element) element.scrollIntoView({ behavior: 'smooth' })
+                  if (element) element.scrollIntoView({ behavior: 'auto' })
                 }, 100)
               } else if (selectedProject || projectCategory) {
                 e.preventDefault()
@@ -68,7 +68,7 @@ export default function Navbar({ selectedProject, onCloseProject, projectCategor
                 if (projectCategory) onResetProjects()
                 setTimeout(() => {
                   const element = document.querySelector(link.href)
-                  if (element) element.scrollIntoView({ behavior: 'smooth' })
+                  if (element) element.scrollIntoView({ behavior: 'auto' })
                 }, 100)
               }
             }}
@@ -103,7 +103,7 @@ export default function Navbar({ selectedProject, onCloseProject, projectCategor
               if (projectCategory) onResetProjects()
               setTimeout(() => {
                 const element = document.querySelector('#contact')
-                if (element) element.scrollIntoView({ behavior: 'smooth' })
+                if (element) element.scrollIntoView({ behavior: 'auto' })
               }, 100)
             }
           }}
@@ -155,7 +155,7 @@ export default function Navbar({ selectedProject, onCloseProject, projectCategor
                    onResetProjects()
                    setTimeout(() => {
                      const element = document.querySelector(link.href)
-                     if (element) element.scrollIntoView({ behavior: 'smooth' })
+                     if (element) element.scrollIntoView({ behavior: 'auto' })
                    }, 100)
                  } else if (selectedProject || projectCategory) {
                    e.preventDefault()
@@ -163,7 +163,7 @@ export default function Navbar({ selectedProject, onCloseProject, projectCategor
                    if (projectCategory) onResetProjects()
                    setTimeout(() => {
                      const element = document.querySelector(link.href)
-                     if (element) element.scrollIntoView({ behavior: 'smooth' })
+                     if (element) element.scrollIntoView({ behavior: 'auto' })
                    }, 100)
                  }
                }}
@@ -184,7 +184,7 @@ export default function Navbar({ selectedProject, onCloseProject, projectCategor
               if (projectCategory) onResetProjects()
               setTimeout(() => {
                 const element = document.querySelector('#contact')
-                if (element) element.scrollIntoView({ behavior: 'smooth' })
+                if (element) element.scrollIntoView({ behavior: 'auto' })
               }, 100)
             }
           }}
