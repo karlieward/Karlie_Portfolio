@@ -209,6 +209,7 @@ export default function ProjectDetail({ project, onClose }) {
                   overflow: 'hidden',
                   transition: 'all 0.3s ease',
                   transform: 'translateY(0)',
+                  height: '400px',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-4px)';
@@ -224,10 +225,10 @@ export default function ProjectDetail({ project, onClose }) {
                       alt={project.images[0].alt}
                       style={{
                         width: '100%',
-                        height: 'auto',
+                        height: '100%',
                         display: 'block',
                         objectFit: 'cover',
-                        objectPosition: 'center 20%',
+                        objectPosition: 'center top',
                       }}
                     />
                   )}
