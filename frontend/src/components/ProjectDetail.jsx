@@ -226,16 +226,17 @@ export default function ProjectDetail({ project, onClose }) {
                         width: '100%',
                         height: 'auto',
                         display: 'block',
+                        objectFit: 'cover',
+                        objectPosition: 'center 20%',
                       }}
                     />
                   )}
                 </div>
               </a>
               <div style={{ marginTop: 24, padding: '16px', background: '#f9fafb', borderRadius: 'var(--radius-lg)' }}>
-                <p style={{ fontSize: '0.9rem', color: '#6b7280', fontWeight: 600, marginBottom: 8 }}>Test Credentials (Admin):</p>
-                <p style={{ fontSize: '0.85rem', color: 'var(--dark)', fontFamily: 'monospace', marginBottom: 6 }}>Username: <strong>karlie</strong></p>
-                <p style={{ fontSize: '0.85rem', color: 'var(--dark)', fontFamily: 'monospace', marginBottom: 6 }}>Password: <strong>kw</strong></p>
-                <p style={{ fontSize: '0.85rem', color: '#6b7280', marginTop: 12 }}>Or try as a regular user: demo / demo</p>
+                <p style={{ fontSize: '0.9rem', color: '#6b7280', fontWeight: 600, marginBottom: 8 }}>Test Credentials:</p>
+                <p style={{ fontSize: '0.85rem', color: 'var(--dark)', fontFamily: 'monospace', marginBottom: 6 }}>Username: <strong>demo</strong></p>
+                <p style={{ fontSize: '0.85rem', color: 'var(--dark)', fontFamily: 'monospace' }}>Password: <strong>demo</strong></p>
               </div>
             </div>
           )}
