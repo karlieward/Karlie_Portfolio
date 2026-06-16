@@ -34,7 +34,7 @@ export default async function handler(req, res) {
     // Prepare email content
     const msg = {
       to: 'karlie3@byu.edu',
-      from: 'noreply@karlie.dev',
+      from: 'karlie3@byu.edu',
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
       html: `
