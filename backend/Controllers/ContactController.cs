@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using PortfolioApi.Models;
+using PortfolioApi.Services;
 
 namespace PortfolioApi.Controllers;
 
@@ -8,18 +9,19 @@ namespace PortfolioApi.Controllers;
 public class ContactController : ControllerBase
 {
     private readonly ILogger<ContactController> _logger;
+    private readonly IEmailService _emailService;
 
-    public ContactController(ILogger<ContactController> logger)
+    public ContactController(ILogger<ContactController> logger, IEmailService emailService)
     {
         _logger = logger;
+        _emailService = emailService;
     }
 
     /// <summary>
-    /// Receives a contact form submission.
-    /// Hook this up to SendGrid, Mailchimp, or a DB as needed.
+    /// Receives a contact form submission and sends via SendGrid.
     /// </summary>
     [HttpPost]
-    public IActionResult Post([FromBody] ContactMessage message)
+    public async Task<IActionResult> Post([FromBody] ContactMessage message)
     {
         if (string.IsNullOrWhiteSpace(message.Name) ||
             string.IsNullOrWhiteSpace(message.Email) ||
@@ -28,11 +30,18 @@ public class ContactController : ControllerBase
             return BadRequest(new { error = "All fields are required." });
         }
 
-        // TODO: integrate email service (e.g. SendGrid) or save to database
-        _logger.LogInformation(
-            "New contact message from {Name} <{Email}>: {Message}",
-            message.Name, message.Email, message.Message);
+        // Send email via SendGrid
+        var emailSent = await _emailService.SendContactEmailAsync(message.Name, message.Email, message.Message);
 
-        return Ok(new { success = true, received = DateTime.UtcNow });
+        if (emailSent)
+        {
+            _logger.LogInformation(
+                "Contact message from {Name} <{Email}> sent successfully",
+                message.Name, message.Email);
+            return Ok(new { success = true, received = DateTime.UtcNow });
+        }
+
+        _logger.LogError("Failed to send contact message from {Name}", message.Name);
+        return StatusCode(500, new { error = "Failed to send message. Please try again." });
     }
 }

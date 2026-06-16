@@ -8,6 +8,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<PortfolioDataService>();
+builder.Services.AddSingleton<IEmailService, SendGridEmailService>();
 
 // CORS — allow React dev server
 builder.Services.AddCors(options =>
