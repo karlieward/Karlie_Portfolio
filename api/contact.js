@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   }
 
   // Get SendGrid API key from environment
-  const sendGridApiKey = process.env.SENDGRID_API_KEY;
+  const sendGridApiKey = process.env.SendGrid__ApiKey;
   if (!sendGridApiKey) {
     console.error('SendGrid API key not configured');
     return res.status(500).json({ error: 'Email service not configured' });
