@@ -106,9 +106,9 @@ function getFallbackData() {
       ctaSecondary: "About Me"
     },
     about: {
-      bio: "I'm a recent Information Systems graduate with a passion for bridging the gap between technology and creativity. I love building things that are both functional and beautiful — whether that's a polished web app, a thoughtfully designed UI, or a data-driven solution that actually makes sense to the people using it.",
+      bio: "I'm an Information Systems student with a passion for bridging the gap between technology and creativity. I love building things that are both functional and beautiful — whether that's a polished web app, a thoughtfully designed UI, or a data-driven solution that actually makes sense to the people using it.",
       highlights: [
-        "B.S. Information Systems — BYU (graduating soon)",
+        "B.S. Information Systems — BYU",
         "Loves UI/UX + full-stack development",
         "Passionate about AI and emerging technologies",
         "Always learning something new"
@@ -192,7 +192,7 @@ function getFallbackData() {
         id: 1,
         title: "Dairy Farm Inventory System",
         description: "Full-stack inventory management system for tracking farm medications and supplies. Built with Node.js, Express, and PostgreSQL with role-based access control and comprehensive audit logging.",
-        longDescription: "A full-stack dairy farm inventory system that allows staff to track medications, equipment, and supplies across different departments. Features include user authentication, role-based access control (Admin vs User views), real-time inventory tracking with quantity management, image uploads for medications, and detailed audit logging of all system changes.",
+        longDescription: "A full-stack dairy farm inventory system that allows staff to track medications, equipment, and supplies across different departments. Features include user authentication, role-based access control (Admin vs User views), real-time inventory tracking with quantity management, image uploads for medications, and detailed audit logging of all system changes. Click the login image to explore the live app.",
         tags: ["Node.js", "Express", "PostgreSQL", "Supabase", "EJS", "Render"],
         emoji: "🐄",
         github: "https://github.com/karlieward/DairyFarm_Inventory",
