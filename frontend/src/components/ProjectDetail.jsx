@@ -228,7 +228,7 @@ export default function ProjectDetail({ project, onClose }) {
                         height: '100%',
                         display: 'block',
                         objectFit: 'cover',
-                        objectPosition: 'center top',
+                        objectPosition: 'center 35%',
                       }}
                     />
                   )}
