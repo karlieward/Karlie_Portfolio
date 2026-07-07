@@ -69,7 +69,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))',
+            gridTemplateColumns: 'repeat(3, 1fr)',
             gap: 32,
           }}>
             {data && data.map(project => {
