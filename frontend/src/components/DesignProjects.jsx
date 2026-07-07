@@ -3,12 +3,16 @@ import wf0 from '../assets/images/WF-00.png'
 import hw1 from '../assets/images/HW-01.png'
 import na1 from '../assets/images/NA-01.png'
 import mib1 from '../assets/images/MIB-01.png'
+import chairsPortfolio from '../assets/images/ChairsPortfolio.png'
+import iconsPortfolio from '../assets/images/IconsPortfolio.png'
 
 const previewMap = {
   'WF-00.png': wf0,
   'HW-01.png': hw1,
   'NA-01.png': na1,
   'MIB-01.png': mib1,
+  'ChairsPortfolio.png': chairsPortfolio,
+  'IconsPortfolio.png': iconsPortfolio,
 }
 
 export default function DesignProjects({ data, onProjectClick, onBack }) {
