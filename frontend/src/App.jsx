@@ -192,9 +192,9 @@ function getFallbackData() {
         description: "Five studies in visual reduction exploring negative space and form",
         longDescription: "Five studies in visual reduction exploring how negative space defines form. By isolating and abstracting the defining characteristics of different chairs, this project investigates how minimal information can suggest complete meaning—demonstrating that sometimes what you remove is more important than what remains.\n\nThis work applies fundamental Gestalt principles—particularly figure and ground and closure—to reveal how viewers naturally complete incomplete forms and perceive spatial relationships between solid shapes and empty space. Each composition uses the interplay of black and white to suggest the essential qualities that distinguish objects, proving that in design, the void can speak as loudly as the form itself.",
         tags: ["Adobe Illustrator", "Design Theory"],
-        preview: "form-counterform-chairs.png",
+        preview: "ChairsPortfolio.png",
         images: [
-          { src: "/images/form-counterform-chairs.png", alt: "Chair form and counterform studies" }
+          { src: "/images/ChairsPortfolio.png", alt: "Chair form and counterform studies" }
         ]
       },
       {
@@ -203,9 +203,9 @@ function getFallbackData() {
         description: "A unified icon set created within strict design constraints",
         longDescription: "This project explores the power of creative limitation in visual design. Beginning with geometric line studies, a single square pattern was selected and deconstructed into its core shapes. Using only these extracted elements—without enlargement, reduction, or alteration—a unified icon set was created within a carefully chosen three-color palette.",
         tags: ["Adobe Illustrator", "Modular Design"],
-        preview: "badges-icons.png",
+        preview: "IconsPortfolio.png",
         images: [
-          { src: "/images/badges-icons.png", alt: "Icon system with geometric shapes and limited color palette" }
+          { src: "/images/IconsPortfolio.png", alt: "Icon system with geometric shapes and limited color palette" }
         ]
       }
     ],
