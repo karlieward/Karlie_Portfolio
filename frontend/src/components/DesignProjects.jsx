@@ -97,7 +97,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                 >
                   {/* Image area */}
                   <div style={{
-                    height: 240,
+                    height: 160,
                     background: '#f3f4f6',
                     display: 'flex',
                     alignItems: 'center',

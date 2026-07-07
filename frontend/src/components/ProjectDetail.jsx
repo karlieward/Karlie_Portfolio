@@ -247,13 +247,13 @@ export default function ProjectDetail({ project, onClose }) {
           )}
 
           {/* Images Gallery */}
-          {project.images && project.images.length > 1 && (
+          {project.images && project.images.length > 0 && (
             <div style={{
               display: 'flex',
               flexDirection: 'column',
               gap: 0,
             }}>
-              {project.images.slice(1).map((image, idx) => {
+              {project.images.slice(project.liveLink ? 1 : 0).map((image, idx) => {
                 const filename = image.src.split('/').pop()
                 const imageSrc = imageMap[filename] || image.src
                 return (
