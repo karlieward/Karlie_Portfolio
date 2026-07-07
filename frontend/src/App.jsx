@@ -194,7 +194,8 @@ function getFallbackData() {
         tags: ["Adobe Illustrator", "Design Theory"],
         preview: "ChairsPortfolio.png",
         images: [
-          { src: "/images/ChairsPortfolio.png", alt: "Chair form and counterform studies" }
+          { src: "/images/ChairsPortfolio.png", alt: "Chair studies 1" },
+          { src: "/images/ChairsPortfolio.png", alt: "Chair studies 2" }
         ]
       },
       {
@@ -205,7 +206,8 @@ function getFallbackData() {
         tags: ["Adobe Illustrator", "Modular Design"],
         preview: "IconsPortfolio.png",
         images: [
-          { src: "/images/IconsPortfolio.png", alt: "Icon system with geometric shapes and limited color palette" }
+          { src: "/images/IconsPortfolio.png", alt: "Icon system 1" },
+          { src: "/images/IconsPortfolio.png", alt: "Icon system 2" }
         ]
       }
     ],

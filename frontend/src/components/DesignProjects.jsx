@@ -108,7 +108,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                     flex: 2,
                   }}>
                     {project.preview ? (
-                      <img src={previewMap[project.preview.split('/').pop()] || project.preview} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: project.id === 5 ? 'center 85%' : project.id === 6 ? 'center 85%' : 'center' }} />
+                      <img src={previewMap[project.preview.split('/').pop()] || project.preview} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     ) : (
                       project.emoji
                     )}
