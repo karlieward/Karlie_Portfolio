@@ -97,7 +97,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                 >
                   {/* Image area */}
                   <div style={{
-                    height: project.id > 4 ? 120 : 240,
+                    height: 240,
                     background: '#f3f4f6',
                     display: 'flex',
                     alignItems: 'center',
@@ -105,7 +105,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                     fontSize: '3rem',
                     borderBottom: '1px solid #e5e7eb',
                     overflow: 'hidden',
-                    flex: project.id > 4 ? 1 : 2,
+                    flex: 2,
                   }}>
                     {project.preview ? (
                       <img src={previewMap[project.preview.split('/').pop()] || project.preview} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -119,7 +119,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                     padding: '12px 16px',
                     display: 'flex',
                     flexDirection: 'column',
-                    flex: project.id > 4 ? 0 : 1,
+                    flex: 1,
                   }}>
                     <h3 style={{
                       fontFamily: 'Plus Jakarta Sans',
