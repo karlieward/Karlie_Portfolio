@@ -119,7 +119,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                     padding: '12px 16px',
                     display: 'flex',
                     flexDirection: 'column',
-                    flex: 1,
+                    flex: project.id > 4 ? 0 : 1,
                   }}>
                     <h3 style={{
                       fontFamily: 'Plus Jakarta Sans',
