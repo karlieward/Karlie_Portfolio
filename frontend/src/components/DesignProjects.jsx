@@ -92,7 +92,6 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                     display: 'flex',
                     flexDirection: 'column',
                     borderColor: isHovered ? 'var(--dark)' : '#e5e7eb',
-                    height: '100%',
                   }}
                 >
                   {/* Image area */}
@@ -105,7 +104,6 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                     fontSize: '3rem',
                     borderBottom: '1px solid #e5e7eb',
                     overflow: 'hidden',
-                    flex: 2,
                   }}>
                     {project.preview ? (
                       <img src={previewMap[project.preview.split('/').pop()] || project.preview} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
