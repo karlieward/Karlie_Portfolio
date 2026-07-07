@@ -185,6 +185,17 @@ function getFallbackData() {
           { src: "/images/MIB-05.png", alt: "Make It Better exploration 5" },
           { src: "/images/MIB-06.png", alt: "Make It Better exploration 6" }
         ]
+      },
+      {
+        id: 5,
+        title: "Chair Studies: Figure & Ground",
+        description: "Five studies in visual reduction exploring negative space and form",
+        longDescription: "Five studies in visual reduction exploring how negative space defines form. By isolating and abstracting the defining characteristics of different chairs, this project investigates how minimal information can suggest complete meaning—demonstrating that sometimes what you remove is more important than what remains.\n\nThis work applies fundamental Gestalt principles—particularly figure and ground and closure—to reveal how viewers naturally complete incomplete forms and perceive spatial relationships between solid shapes and empty space. Each composition uses the interplay of black and white to suggest the essential qualities that distinguish objects, proving that in design, the void can speak as loudly as the form itself.",
+        tags: ["Adobe Illustrator", "Design Theory"],
+        preview: "form-counterform-chairs.png",
+        images: [
+          { src: "/images/form-counterform-chairs.png", alt: "Chair form and counterform studies" }
+        ]
       }
     ],
     projects: [
