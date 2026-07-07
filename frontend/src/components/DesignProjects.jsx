@@ -97,7 +97,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                   {/* Image area */}
                   <div style={{
                     height: 240,
-                    background: '#f3f4f6',
+                    background: '#fff',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -106,7 +106,7 @@ export default function DesignProjects({ data, onProjectClick, onBack }) {
                     overflow: 'hidden',
                   }}>
                     {project.preview ? (
-                      <img src={previewMap[project.preview.split('/').pop()] || project.preview} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      <img src={previewMap[project.preview.split('/').pop()] || project.preview} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
                     ) : (
                       project.emoji
                     )}
