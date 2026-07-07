@@ -196,6 +196,17 @@ function getFallbackData() {
         images: [
           { src: "/images/form-counterform-chairs.png", alt: "Chair form and counterform studies" }
         ]
+      },
+      {
+        id: 6,
+        title: "Icon System: Constraint-Based Design",
+        description: "A unified icon set created within strict design constraints",
+        longDescription: "This project explores the power of creative limitation in visual design. Beginning with geometric line studies, a single square pattern was selected and deconstructed into its core shapes. Using only these extracted elements—without enlargement, reduction, or alteration—a unified icon set was created within a carefully chosen three-color palette.",
+        tags: ["Adobe Illustrator", "Modular Design"],
+        preview: "badges-icons.png",
+        images: [
+          { src: "/images/badges-icons.png", alt: "Icon system with geometric shapes and limited color palette" }
+        ]
       }
     ],
     projects: [
