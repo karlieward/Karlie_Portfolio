@@ -38,6 +38,7 @@ import mib5 from '../assets/images/MIB-05.png'
 import mib6 from '../assets/images/MIB-06.png'
 import chairsPortfolio from '../assets/images/ChairsPortfolio.png'
 import iconsPortfolio from '../assets/images/IconsPortfolio.png'
+import logoLottoPortfolio from '../assets/images/LogoLottoPortfolio.png'
 
 const imageMap = {
   'dairy-1.jpg': dairy1,
@@ -79,6 +80,7 @@ const imageMap = {
   'MIB-06.png': mib6,
   'ChairsPortfolio.png': chairsPortfolio,
   'IconsPortfolio.png': iconsPortfolio,
+  'LogoLottoPortfolio.png': logoLottoPortfolio,
 }
 
 export default function ProjectDetail({ project, onClose }) {
