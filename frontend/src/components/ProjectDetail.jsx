@@ -275,7 +275,7 @@ export default function ProjectDetail({ project, onClose }) {
                         height: 'auto',
                         display: 'block',
                         cursor: 'pointer',
-                        marginBottom: idx < project.images.length - 2 ? 90 : 0,
+                        marginBottom: idx < project.images.length - 1 ? 90 : 0,
                       }}
                     />
                   </div>
