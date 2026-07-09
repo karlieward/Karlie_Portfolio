@@ -220,6 +220,19 @@ function getFallbackData() {
         images: [
           { src: "/images/LogoLottoPortfolio.png", alt: "R Referee logo" }
         ]
+      },
+      {
+        id: 8,
+        title: "Ward's Dairy Logo",
+        description: "A symbolic logo design exploring brand attributes and visual identity through research and AI-assisted ideation",
+        longDescription: "Ward's Dairy Logo is a comprehensive branding project that demonstrates the iterative design process from research through final execution. Beginning with extensive brand research—including company background, voice, competitive analysis, and target audience—the project evolved through AI-assisted visual ideation and sketching to develop a distinctive symbol representing the brand's attributes. The logo integrates fundamental design elements including form and counter form, exploring how symbolic and abstract shapes can communicate brand values. The final mark is presented in both black and white and full color, showcasing how the design adapts across different applications while maintaining visual clarity and brand recognition.",
+        tags: ["Adobe Illustrator", "Brand Research", "AI Design", "Logo Design"],
+        preview: "WardsPortfolio-01.png",
+        images: [
+          { src: "/images/WardsPortfolio-01.png", alt: "Ward's Dairy Logo exploration 1" },
+          { src: "/images/WardsPortfolio-02.png", alt: "Ward's Dairy Logo exploration 2" },
+          { src: "/images/WardsPortfolio-03.png", alt: "Ward's Dairy Logo final design" }
+        ]
       }
     ],
     projects: [

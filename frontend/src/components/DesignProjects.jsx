@@ -6,6 +6,7 @@ import mib1 from '../assets/images/MIB-01.png'
 import chairsPortfolio from '../assets/images/ChairsPortfolio.png'
 import iconsPortfolio from '../assets/images/IconsPortfolio.png'
 import logoLottoPortfolio from '../assets/images/LogoLottoPortfolio.png'
+import wardsPortfolio01 from '../assets/images/WardsPortfolio-01.png'
 
 const previewMap = {
   'WF-00.png': wf0,
@@ -15,6 +16,7 @@ const previewMap = {
   'ChairsPortfolio.png': chairsPortfolio,
   'IconsPortfolio.png': iconsPortfolio,
   'LogoLottoPortfolio.png': logoLottoPortfolio,
+  'WardsPortfolio-01.png': wardsPortfolio01,
 }
 
 export default function DesignProjects({ data, onProjectClick, onBack }) {
