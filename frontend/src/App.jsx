@@ -209,6 +209,17 @@ function getFallbackData() {
           { src: "/images/IconsPortfolio.png", alt: "Icon system 1" },
           { src: "/images/IconsPortfolio.png", alt: "Icon system 2" }
         ]
+      },
+      {
+        id: 7,
+        title: "Logo Lotto: R Referee",
+        description: "A typographic logo combining the letter 'R' with a referee whistle symbol",
+        longDescription: "Logo Lotto explores the power of lettermarks and monograms in brand identity. This project merges a single letter with a pictorial symbol to create a memorable, multifaceted logo. The 'R Referee' logo integrates horizontal lines—suggesting a whistle's airflow—directly into the letterform itself, creating a seamless marriage of symbol and typography. The design works at multiple scales and uses only black and white, demonstrating how creative constraint leads to distinctive visual communication. Through iterative sketching and refinement, the final mark achieves instant recognition while maintaining the integrity of the letter.",
+        tags: ["Adobe Illustrator", "Typographic Logo", "Symbol Design"],
+        preview: "LogoLottoPortfolio.png",
+        images: [
+          { src: "/images/LogoLottoPortfolio.png", alt: "R Referee logo" }
+        ]
       }
     ],
     projects: [
