@@ -1,3 +1,5 @@
+import headshot from '../assets/images/IS_Headshot.jpg'
+
 export default function About({ data }) {
   return (
     <section id="about" className="section" style={{ background: 'var(--offwhite)', color: 'var(--dark)', position: 'relative', overflow: 'hidden', borderTop: '1px solid #e5e7eb' }}>
@@ -56,9 +58,10 @@ export default function About({ data }) {
                 width: 120, height: 120, borderRadius: '50%',
                 background: '#e5e7eb',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '2.5rem', fontWeight: 800, color: 'var(--dark)',
-                fontFamily: 'Plus Jakarta Sans',
-              }}>K</div>
+                overflow: 'hidden',
+              }}>
+                <img src={headshot} alt="Karlie" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
               <div>
                 <div style={{ fontFamily: 'Plus Jakarta Sans', fontWeight: 700, fontSize: '1.3rem', color: 'var(--dark)' }}>Karlie</div>
                 <div style={{ color: '#6b7280', fontSize: '0.9rem', marginTop: 4 }}>

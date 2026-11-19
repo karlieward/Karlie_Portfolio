@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import ProjectsLanding from './components/ProjectsLanding'
+import Home from './components/Home'
 import Projects from './components/Projects'
 import DesignProjects from './components/DesignProjects'
 import ProjectDetail from './components/ProjectDetail'
-import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -50,6 +47,16 @@ function App() {
     )
   }
 
+  // Home page cards → existing project pages (temporary until Figma case studies are in)
+  const openCard = (key) => {
+    const find = (list, id) => list.find(p => p.id === id)
+    if (key === 'dairy') setSelectedProject(find(portfolioData.projects, 1))
+    else if (key === 'neue') setSelectedProject(find(portfolioData.designProjects, 3))
+    else if (key === 'mib') setSelectedProject(find(portfolioData.designProjects, 4))
+    else if (key === 'tools') setProjectCategory('design')
+    window.scrollTo(0, 0)
+  }
+
   return (
     <>
       <Navbar
@@ -57,14 +64,13 @@ function App() {
         onCloseProject={() => setSelectedProject(null)}
         projectCategory={projectCategory}
         onResetProjects={() => setProjectCategory(null)}
+        onSelectCategory={(cat) => {
+          setSelectedProject(null)
+          setProjectCategory(cat)
+          window.scrollTo(0, 0)
+        }}
       />
       <main>
-        {!selectedProject && !projectCategory && (
-          <>
-            <Hero data={portfolioData.hero} />
-            <About data={portfolioData.about} />
-          </>
-        )}
         {selectedProject ? (
           <ProjectDetail project={selectedProject} onClose={() => setSelectedProject(null)} />
         ) : projectCategory === 'technical' ? (
@@ -83,10 +89,17 @@ function App() {
               onBack={() => setProjectCategory(null)}
             />
           </>
+        ) : projectCategory === 'fun' ? (
+          <section className="kw-section kw-fun">
+            <div className="kw-container">
+              <p className="kw-eyebrow">Fun</p>
+              <h1 className="kw-about-title">Under construction</h1>
+              <p className="kw-about-body">Something playful is on its way. Check back soon.</p>
+            </div>
+          </section>
         ) : (
           <>
-            <ProjectsLanding onSelectCategory={setProjectCategory} />
-            <Skills data={portfolioData.skills} />
+            <Home onOpenCard={openCard} />
             <Contact />
           </>
         )}
