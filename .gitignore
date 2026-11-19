@@ -3,3 +3,6 @@ dist/
 .env
 .env.local
 .DS_Store
+
+# temporary Figma download script (links expire)
+get-figma-images.sh

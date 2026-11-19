@@ -34,7 +34,7 @@ export default function Navbar({ projectCategory, onCloseProject, onResetProject
   const mainLinks = [
     { label: 'Work', onClick: () => goHome('#projects') },
     { label: 'Fun', onClick: () => goCategory('fun'), active: projectCategory === 'fun' },
-    { label: 'About', onClick: () => goHome('#about') },
+    { label: 'About', onClick: () => goCategory('about'), active: projectCategory === 'about' },
   ]
 
   const renderLinks = (mobile) => (

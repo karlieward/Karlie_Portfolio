@@ -4,7 +4,8 @@ import Home from './components/Home'
 import Projects from './components/Projects'
 import DesignProjects from './components/DesignProjects'
 import ProjectDetail from './components/ProjectDetail'
-import Contact from './components/Contact'
+import AboutPage from './components/AboutPage'
+import DairyCaseStudy from './components/DairyCaseStudy'
 import Footer from './components/Footer'
 
 function App() {
@@ -47,10 +48,19 @@ function App() {
     )
   }
 
+  const backToWork = () => {
+    setSelectedProject(null)
+    setProjectCategory(null)
+    setTimeout(() => {
+      const el = document.querySelector('#projects')
+      if (el) el.scrollIntoView({ behavior: 'auto' })
+    }, 50)
+  }
+
   // Home page cards → existing project pages (temporary until Figma case studies are in)
   const openCard = (key) => {
     const find = (list, id) => list.find(p => p.id === id)
-    if (key === 'dairy') setSelectedProject(find(portfolioData.projects, 1))
+    if (key === 'dairy') setProjectCategory('cs-dairy')
     else if (key === 'neue') setSelectedProject(find(portfolioData.designProjects, 3))
     else if (key === 'mib') setSelectedProject(find(portfolioData.designProjects, 4))
     else if (key === 'tools') setProjectCategory('design')
@@ -97,11 +107,12 @@ function App() {
               <p className="kw-about-body">Something playful is on its way. Check back soon.</p>
             </div>
           </section>
+        ) : projectCategory === 'cs-dairy' ? (
+          <DairyCaseStudy onBack={backToWork} />
+        ) : projectCategory === 'about' ? (
+          <AboutPage />
         ) : (
-          <>
-            <Home onOpenCard={openCard} />
-            <Contact />
-          </>
+          <Home onOpenCard={openCard} />
         )}
       </main>
       <Footer />
