@@ -6,6 +6,7 @@ import DesignProjects from './components/DesignProjects'
 import ProjectDetail from './components/ProjectDetail'
 import AboutPage from './components/AboutPage'
 import DairyCaseStudy from './components/DairyCaseStudy'
+import NeueCaseStudy from './components/NeueCaseStudy'
 import Footer from './components/Footer'
 
 function App() {
@@ -61,7 +62,7 @@ function App() {
   const openCard = (key) => {
     const find = (list, id) => list.find(p => p.id === id)
     if (key === 'dairy') setProjectCategory('cs-dairy')
-    else if (key === 'neue') setSelectedProject(find(portfolioData.designProjects, 3))
+    else if (key === 'neue') setProjectCategory('cs-neue')
     else if (key === 'mib') setSelectedProject(find(portfolioData.designProjects, 4))
     else if (key === 'tools') setProjectCategory('design')
     window.scrollTo(0, 0)
@@ -109,6 +110,8 @@ function App() {
           </section>
         ) : projectCategory === 'cs-dairy' ? (
           <DairyCaseStudy onBack={backToWork} />
+        ) : projectCategory === 'cs-neue' ? (
+          <NeueCaseStudy onBack={backToWork} />
         ) : projectCategory === 'about' ? (
           <AboutPage />
         ) : (
