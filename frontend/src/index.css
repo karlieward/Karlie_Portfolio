@@ -299,6 +299,18 @@ body {
 .kw-logo-card img { width: 70%; max-width: 220px; margin: 0 auto; display: block; }
 .kw-logo-card p { font-size: 0.98rem; line-height: 1.6; }
 
+/* Case studies shown exactly as designed in Figma */
+.kw-slides-page { padding: 104px 0 80px; }
+.kw-slides {
+  /* each 16:9 frame fits in one desktop screen */
+  width: min(1280px, calc((100vh - 120px) * 16 / 9), calc(100vw - 48px));
+  margin: 0 auto;
+}
+.kw-slide { position: relative; line-height: 0; }
+.kw-slide img { width: 100%; height: auto; display: block; mix-blend-mode: multiply; }
+.kw-slide-link { position: absolute; display: block; border-radius: 8px; }
+.kw-slide-link:hover, .kw-slide-link:focus-visible { outline: 2px solid var(--brown); outline-offset: 2px; }
+
 @media (max-width: 760px) {
   .kw-nav-links { display: none; }
   .kw-hamburger { display: flex; }
