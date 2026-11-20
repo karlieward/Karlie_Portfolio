@@ -82,7 +82,7 @@ export default function Home({ onOpenCard }) {
       <section className="kw-hero">
         <div className="kw-container kw-hero-inner">
           <h1 className="kw-name">Karlie Ward</h1>
-          <p className="kw-role">Information Systems student who thinks good design and clean code belong together</p>
+          <p className="kw-role">Information Systems student who uses tech, design and AI to make things work better</p>
         </div>
       </section>
 
