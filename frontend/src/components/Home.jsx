@@ -18,7 +18,7 @@ const CARDS = [
   },
   {
     key: 'neue',
-    title: 'Putting school, work and everyday tasks in one place to prioritize',
+    title: 'Putting school, work and everyday tasks in one place',
     sub: 'Designed in Figma, then built with Cursor.',
     neue: true,
   },
