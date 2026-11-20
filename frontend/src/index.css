@@ -142,11 +142,13 @@ body {
 
 /* Neue card: the four category colors on the left, the app on the right */
 .kw-neue-card { display: grid; grid-template-columns: 1fr 1fr; padding: 7% 7% 0; gap: 7%; }
-.kw-neue-swatches { display: flex; flex-direction: column; gap: 10px; align-self: center; }
-.kw-neue-swatches span {
-  display: block; padding: 12px 14px; color: #fff; font-family: var(--kw-font-text);
-  font-size: 0.9rem; font-weight: 500; letter-spacing: 0.02em;
+.kw-neue-stack { display: flex; flex-direction: column; align-self: center; }
+.kw-neue-stack span {
+  font-family: var(--kw-font-display); font-variation-settings: 'SOFT' 0, 'WONK' 0, 'opsz' 144;
+  font-weight: 600; font-size: clamp(1.3rem, 2.9vw, 2.4rem); line-height: 0.62; letter-spacing: -0.01em;
+  white-space: nowrap;
 }
+.kw-neue-stack span:last-child { line-height: 1; }
 .kw-neue-phone { align-self: stretch; display: flex; align-items: flex-start; justify-content: center; overflow: hidden; }
 .kw-neue-phone img { width: 100%; height: auto; display: block; }
 
@@ -165,7 +167,7 @@ body {
 .kw-card-desc { font-size: 1rem; color: var(--brown-soft); line-height: 1.55; }
 
 /* Tools collage */
-.kw-collage { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: 0; }
+.kw-collage { display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 0; }
 .kw-collage-cell { overflow: hidden; background: #fff; }
 .kw-collage-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
