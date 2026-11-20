@@ -3,7 +3,8 @@ import { useEffect } from 'react'
 // Shows Karlie's Figma designs exactly as designed, one 16:9 frame after another.
 // White in the designs blends into the site's cream background (mix-blend-mode: multiply).
 // `links` are clickable areas placed over links in the designs, in percent of the frame.
-export default function CaseStudySlides({ folder, slides, links = {}, onBack }) {
+// `hideBottomBar` lists slide numbers whose bottom navigation strip should be cut off.
+export default function CaseStudySlides({ folder, slides, links = {}, hideBottomBar = [], onBack }) {
   useEffect(() => { window.scrollTo(0, 0) }, [])
 
   return (
@@ -13,7 +14,7 @@ export default function CaseStudySlides({ folder, slides, links = {}, onBack }) 
         {slides.map((alt, i) => {
           const n = String(i + 1).padStart(2, '0')
           return (
-            <div key={n} className="kw-slide">
+            <div key={n} className={`kw-slide${hideBottomBar.includes(i + 1) ? ' is-cropped' : ''}`}>
               <img src={`/case-studies/${folder}/${n}.png`} alt={alt} loading={i < 2 ? 'eager' : 'lazy'} />
               {(links[i + 1] || []).map(l => (
                 <a

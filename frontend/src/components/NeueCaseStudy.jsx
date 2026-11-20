@@ -23,11 +23,15 @@ const SLIDES = [
 
 const PROTOTYPE = 'https://www.figma.com/proto/buCouJuFG5o9Uyx4wqhT8h/NEUE-APP?team_id=1415715963632767103&node-id=162-2395&page-id=125%3A835&starting-point-node-id=162%3A2507&t=SvNLmQ6WP31K6jg0-1'
 
+// Slides 2–16 have the bottom navigation strip; it's cut off on the site.
+const HIDE_BOTTOM_BAR = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+
+// Link areas in percent of the visible (cropped) slide
 const LINKS = {
-  15: [{ href: PROTOTYPE, label: 'Open the Neue prototype in Figma', box: [33.5, 0, 39, 94] }],
-  16: [{ href: 'https://github.com/karlieward/neue-app.git', label: 'View the Neue code on GitHub', box: [54, 69, 9.5, 6] }],
+  15: [{ href: PROTOTYPE, label: 'Open the Neue prototype in Figma', box: [33.5, 0, 39, 100] }],
+  16: [{ href: 'https://github.com/karlieward/neue-app.git', label: 'View the Neue code on GitHub', box: [54, 73.5, 9.5, 6.5] }],
 }
 
 export default function NeueCaseStudy({ onBack }) {
-  return <CaseStudySlides folder="neue" slides={SLIDES} links={LINKS} onBack={onBack} />
+  return <CaseStudySlides folder="neue" slides={SLIDES} links={LINKS} hideBottomBar={HIDE_BOTTOM_BAR} onBack={onBack} />
 }
