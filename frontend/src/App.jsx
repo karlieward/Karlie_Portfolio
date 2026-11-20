@@ -95,7 +95,7 @@ function App() {
         ) : projectCategory === 'design' ? (
           <>
             <DesignProjects
-              data={portfolioData.designProjects}
+              data={portfolioData.designProjects.filter(p => p.id !== 3 && p.id !== 4)}
               onProjectClick={setSelectedProject}
               onBack={() => setProjectCategory(null)}
             />
@@ -221,8 +221,7 @@ function getFallbackData() {
         tags: ["Adobe Illustrator", "Design Theory"],
         preview: "ChairsPortfolio.png",
         images: [
-          { src: "/images/ChairsPortfolio.png", alt: "Chair studies 1" },
-          { src: "/images/ChairsPortfolio.png", alt: "Chair studies 2" }
+          { src: "/images/ChairsPortfolio.png", alt: "Chair studies" }
         ]
       },
       {
@@ -233,8 +232,7 @@ function getFallbackData() {
         tags: ["Adobe Illustrator", "Modular Design"],
         preview: "IconsPortfolio.png",
         images: [
-          { src: "/images/IconsPortfolio.png", alt: "Icon system 1" },
-          { src: "/images/IconsPortfolio.png", alt: "Icon system 2" }
+          { src: "/images/IconsPortfolio.png", alt: "Icon system" }
         ]
       },
       {
